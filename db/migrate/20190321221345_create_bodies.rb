@@ -1,7 +1,7 @@
 class CreateBodies < ActiveRecord::Migration[5.1]
   def change
     create_table :bodies do |t|
-      t.string :type
+      t.string :category
       t.string :content
       t.integer :number
       t.references :sentence, foreign_key: true

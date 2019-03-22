@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20190322144411) do
   enable_extension "plpgsql"
 
   create_table "bodies", force: :cascade do |t|
-    t.string "type"
+    t.string "category"
     t.string "content"
     t.integer "number"
     t.bigint "sentence_id"
@@ -34,8 +34,8 @@ ActiveRecord::Schema.define(version: 20190322144411) do
   end
 
   create_table "responsibles", force: :cascade do |t|
-    t.string "nombre"
-    t.string "tipo"
+    t.string "name"
+    t.string "category"
     t.bigint "sentence_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 20190322144411) do
   create_table "sentences", force: :cascade do |t|
     t.string "name"
     t.string "entry_point"
-    t.string "type"
+    t.string "category"
     t.date "date"
     t.string "institution"
     t.datetime "created_at", null: false
