@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190321221345) do
+ActiveRecord::Schema.define(version: 20190322144137) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,15 @@ ActiveRecord::Schema.define(version: 20190321221345) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["sentence_id"], name: "index_bodies_on_sentence_id"
+  end
+
+  create_table "responsibles", force: :cascade do |t|
+    t.string "nombre"
+    t.string "tipo"
+    t.bigint "sentence_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["sentence_id"], name: "index_responsibles_on_sentence_id"
   end
 
   create_table "sentences", force: :cascade do |t|
@@ -48,4 +57,5 @@ ActiveRecord::Schema.define(version: 20190321221345) do
   end
 
   add_foreign_key "bodies", "sentences"
+  add_foreign_key "responsibles", "sentences"
 end
