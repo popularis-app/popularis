@@ -10,19 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190322144137) do
+ActiveRecord::Schema.define(version: 20190322144411) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "bodies", force: :cascade do |t|
-    t.string "tipo"
-    t.string "contenido"
-    t.integer "numero"
+    t.string "type"
+    t.string "content"
+    t.integer "number"
     t.bigint "sentence_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["sentence_id"], name: "index_bodies_on_sentence_id"
+  end
+
+  create_table "feedbacks", force: :cascade do |t|
+    t.string "content"
+    t.bigint "sentence_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["sentence_id"], name: "index_feedbacks_on_sentence_id"
   end
 
   create_table "responsibles", force: :cascade do |t|
@@ -35,11 +43,11 @@ ActiveRecord::Schema.define(version: 20190322144137) do
   end
 
   create_table "sentences", force: :cascade do |t|
-    t.string "nombre"
-    t.string "entrada"
-    t.string "tipo"
-    t.date "fecha"
-    t.string "institucion"
+    t.string "name"
+    t.string "entry_point"
+    t.string "type"
+    t.date "date"
+    t.string "institution"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -57,5 +65,6 @@ ActiveRecord::Schema.define(version: 20190322144137) do
   end
 
   add_foreign_key "bodies", "sentences"
+  add_foreign_key "feedbacks", "sentences"
   add_foreign_key "responsibles", "sentences"
 end
