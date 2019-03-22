@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+      <div id="sentences">
+        <% @sentences.each do |sentence| %>
+          <h4><%= sentence.name %></h4>
+          <p><%= sentence.category %></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,4 +1,8 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-
-<%= Sentence.all %>
+<!-- <img src="../../assets/images/1518_Popularis_JG_01.jpg" alt=""> -->
+<%= form_tag sentences_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "incumplimiento de contrato"
+  %>
+<% end %>
