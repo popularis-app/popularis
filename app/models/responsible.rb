@@ -1,3 +1,3 @@
 class Responsible < ApplicationRecord
-  belongs_to :sentencia
+  belongs_to :sentence
 end
