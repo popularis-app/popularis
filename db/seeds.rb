@@ -24,7 +24,7 @@ end
 
 p 'Creating notifieds......'
 sentence["Notificados"].each do |notificado|
-	Notified.create!(title: notificado["Titulo"], name: notificado["Nombre"], number: notificado["Numero"], body: Body.last)
+	Notified.create!(title: notificado["Titulo"], name: notificado["Nombre"], number: notificado["Numero"], sentence: s)
 end
 
 p 'Creating parts.........'
