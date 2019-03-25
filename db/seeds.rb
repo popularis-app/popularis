@@ -23,10 +23,10 @@ sentences.each do |key, sentence|
 		Body.create!(category: cuerpo["Tipo"], content: cuerpo["Contenido"], number: cuerpo["Numero"], sentence: s)
 	end
 
-	p 'Creating notifieds......'
-	sentence["Notificados"].each do |notificado|
-		Notified.create!(title: notificado["Titulo"], name: notificado["Nombre"], number: notificado["Numero"], body: Body.last)
-	end
+p 'Creating notifieds......'
+sentence["Notificados"].each do |notificado|
+	Notified.create!(title: notificado["Titulo"], name: notificado["Nombre"], number: notificado["Numero"], sentence: s)
+end
 
 	p 'Creating parts.........'
 	sentence["Partes"].each do |parte|
