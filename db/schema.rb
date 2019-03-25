@@ -37,10 +37,10 @@ ActiveRecord::Schema.define(version: 20190322163837) do
     t.string "title"
     t.string "name"
     t.integer "number"
-    t.bigint "body_id"
+    t.bigint "sentence_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["body_id"], name: "index_notifieds_on_body_id"
+    t.index ["sentence_id"], name: "index_notifieds_on_sentence_id"
   end
 
   create_table "parts", force: :cascade do |t|
@@ -89,7 +89,7 @@ ActiveRecord::Schema.define(version: 20190322163837) do
 
   add_foreign_key "bodies", "sentences"
   add_foreign_key "feedbacks", "sentences"
-  add_foreign_key "notifieds", "bodies"
+  add_foreign_key "notifieds", "sentences"
   add_foreign_key "parts", "sentences"
   add_foreign_key "responsibles", "sentences"
 end

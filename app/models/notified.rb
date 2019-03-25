@@ -1,3 +1,3 @@
 class Notified < ApplicationRecord
-  belongs_to :body
+  belongs_to :sentence
 end
