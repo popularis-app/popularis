@@ -1,9 +1,16 @@
-<!-- <img src="../../assets/images/1518_Popularis_JG_01.jpg" alt=""> -->
-<%= form_tag sentences_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "incumplimiento de contrato"
-  %>
-  <%= submit_tag 'Search' %>
-<% end %>
+<div class="container">
+  <div class="row wrapper">
+    <div class="col-6 offset-3">
+      <div class="form flex flex-vertical">
+        <%= form_tag sentences_path, method: :get do %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control-lg",
+            placeholder: "incumplimiento de contrato"
+          %>
+          <%= submit_tag 'Search', class: 'btn btn-primary' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
