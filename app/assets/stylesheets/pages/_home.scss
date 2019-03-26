@@ -2,3 +2,15 @@
 .small-text{
 	font-size: 16px;
 }
+
+.wrapper{
+  height: 100vh;
+}
+
+.flex{
+  display: flex
+}
+
+.flex-vertical{
+  flex-direction: column;
+}

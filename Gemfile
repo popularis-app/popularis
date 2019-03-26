@@ -16,6 +16,7 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem 'pg_search'
+gem 'bootstrap', '~> 4.3.1'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

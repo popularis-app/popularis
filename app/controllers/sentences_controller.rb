@@ -12,17 +12,10 @@ class SentencesController < ApplicationController
       OR bodies.content @@ :query \
       OR bodies.category @@ :query
   		"
-      # movies.title ILIKE :query \
-      #       OR movies.syllabus ILIKE :query \
-      #       OR directors.first_name ILIKE :query \
-      #       OR directors.last_name ILIKE :query \
-  		# @sentences = Sentence.where(sql_query, query: "%#{params[:query]}%")
-      # @sentences = @sentences.uniq
-      # @sentences.each do |sentence|
-      #   if sentence.uniq(@sentences)
-      # end
   		@sentences = Sentence.joins(:bodies).where(sql_query, query: "%#{params[:query]}%")
-  		# raise
+      # Antes de solo display las .uniq -> orderlas en orden dependiendo de la que mas salga repetida.... weighted display on index
+  		@sentences = @sentences.uniq
+      # raise
   	else
   		@sentences = Sentence.all
   	end
