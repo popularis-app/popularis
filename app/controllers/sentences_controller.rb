@@ -12,7 +12,6 @@ class SentencesController < ApplicationController
       OR bodies.content @@ :query \
       OR bodies.category @@ :query
   		"
-
       # movies.title ILIKE :query \
       #       OR movies.syllabus ILIKE :query \
       #       OR directors.first_name ILIKE :query \
