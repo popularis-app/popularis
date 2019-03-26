@@ -17,7 +17,7 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'pg_search'
 gem 'bootstrap', '~> 4.3.1'
-gem 'dotenv-rails', groups: [:development, :test]
+gem 'cloudinary', '~> 1.9.1'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

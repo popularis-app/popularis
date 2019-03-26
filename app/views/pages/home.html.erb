@@ -1,6 +1,13 @@
 <div class="container">
   <div class="row wrapper">
-    <div class="col-6 offset-3">
+    <div class="col-6 offset-3 text-center">
+      <div>
+        <div class="info">
+          <%= cl_image_tag("dto5gjux9rwrrlzr7san",
+          width: 400) %>
+          <h5>Buscador de sentencias panameñas</h5>
+        </div>
+      </div>
       <div class="form flex flex-vertical">
         <%= form_tag sentences_path, method: :get do %>
           <%= text_field_tag :query,
@@ -14,3 +21,5 @@
     </div>
   </div>
 </div>
+
+
