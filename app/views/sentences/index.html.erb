@@ -4,9 +4,10 @@
       <div id="sentences">
         <%#= @sentences.count %>
         <% @sentences.each do |sentence| %>
-          <h4>Sentencia del <%= sentence.institution.capitalize %></h3>
+          <h4>Sentencia del <%= sentence.capitalize_everything(sentence.institution) %> del <%= sentence.spanish_date %> [ <%= sentence.parts.first.first_name %> vs. <%= sentence.parts.last.first_name %>]</h3>
           <h4><%= sentence.name %></h4>
           <p><%= sentence.category %></p>
+          <%# end %>
         <% end %>
       </div>
     </div>
