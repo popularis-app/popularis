@@ -4,7 +4,9 @@
 }
 
 .wrapper{
-  height: 100vh;
+  height: 90vh;
+  display: flex;
+  align-content: center
 }
 
 .flex{
@@ -13,4 +15,31 @@
 
 .flex-vertical{
   flex-direction: column;
+}
+
+.second-line{
+  font-size: 18px;
+  color: $gray;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.lightest-gray-font{
+  color: $lightest-gray
+}
+
+#query{
+  color: $lightest-gray
+}
+
+.gray-font{
+  color: $gray
+}
+
+.curvier{
+  border-radius: 20%
+}
+
+.btn-xtra-padding{
+  padding: 12px 30px
 }

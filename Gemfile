@@ -9,6 +9,7 @@ gem 'puma'
 gem 'rails', '5.1.6.1'
 gem 'redis'
 
+
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.6.1'
 gem 'sassc-rails'
@@ -17,6 +18,9 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'pg_search'
 gem 'bootstrap', '~> 4.3.1'
+gem 'cloudinary', '~> 1.9.1'
+# gem "actionview", ">= 5.1.6.2"
+
 
 group :development do
   gem 'web-console', '>= 3.3.0'
