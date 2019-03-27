@@ -12,21 +12,25 @@ require 'json'
 p "Parsing JSON file"
 filepath = 'sentencias.json'
 serialized_sentence = File.read(filepath)
-sentences = JSON.parse(serialized_sentence)["Sentencias"]
+sentences = JSON.parse(serialized_sentence)
+sentences = sentences["Sentencias"]
+p sentences
 
-p 'Creating sentence....'
-sentences.each do |key, sentence|
+sentences.each do |sentence|
+  p sentence
+  p 'Creating sentence....'
 	s = Sentence.create!(name: sentence["Nombre"], entry_point: sentence["Entrada"], category: sentence["Tipo"], date: sentence["Fecha"], institution: sentence["Institucion"])
+  p Sentence.all.count
 
 	p 'Creating body.....'
 	sentence["Cuerpo"].each do |cuerpo|
 		Body.create!(category: cuerpo["Tipo"], content: cuerpo["Contenido"], number: cuerpo["Numero"], sentence: s)
 	end
 
-p 'Creating notifieds......'
-sentence["Notificados"].each do |notificado|
-	Notified.create!(title: notificado["Titulo"], name: notificado["Nombre"], number: notificado["Numero"], sentence: s)
-end
+  p 'Creating notifieds......'
+  sentence["Notificados"].each do |notificado|
+  	Notified.create!(title: notificado["Titulo"], name: notificado["Nombre"], number: notificado["Numero"], sentence: s)
+  end
 
 	p 'Creating parts.........'
 	sentence["Partes"].each do |parte|
