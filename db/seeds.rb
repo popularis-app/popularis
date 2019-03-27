@@ -14,13 +14,11 @@ filepath = 'sentencias.json'
 serialized_sentence = File.read(filepath)
 sentences = JSON.parse(serialized_sentence)
 sentences = sentences["Sentencias"]
-p sentences
 
 sentences.each do |sentence|
-  p sentence
   p 'Creating sentence....'
 	s = Sentence.create!(name: sentence["Nombre"], entry_point: sentence["Entrada"], category: sentence["Tipo"], date: sentence["Fecha"], institution: sentence["Institucion"])
-  p Sentence.all.count
+
 
 	p 'Creating body.....'
 	sentence["Cuerpo"].each do |cuerpo|
