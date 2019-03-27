@@ -4,6 +4,7 @@
       <div id="sentences">
         <%#= @sentences.count %>
         <% @sentences.each do |sentence| %>
+          <h4>Sentencia del <%= sentence.institution.capitalize %></h3>
           <h4><%= sentence.name %></h4>
           <p><%= sentence.category %></p>
         <% end %>
