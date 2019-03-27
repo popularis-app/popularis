@@ -19,7 +19,7 @@ gem 'webpacker'
 gem 'pg_search'
 gem 'bootstrap', '~> 4.3.1'
 gem 'cloudinary', '~> 1.9.1'
-gem "actionview", ">= 5.1.6.2"
+# gem "actionview", ">= 5.1.6.2"
 
 
 group :development do
