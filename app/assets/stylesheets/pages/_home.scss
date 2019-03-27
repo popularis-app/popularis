@@ -4,7 +4,9 @@
 }
 
 .wrapper{
-  height: 100vh;
+  height: 70vh;
+  display: flex;
+  align-content: center
 }
 
 .flex{
@@ -13,4 +15,11 @@
 
 .flex-vertical{
   flex-direction: column;
+}
+
+.second-line{
+  font-size: 24px;
+  color: $gray;
+  font-weight: 300;
+  line-height: 1.5;
 }
