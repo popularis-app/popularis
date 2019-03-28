@@ -1,8 +1,42 @@
 .blue-header{
   color: $blue;
-
 }
 
 ul{
-  list-style: none
+  list-style: none;
+  padding: 0
+}
+
+.font-18{
+  font-size: 18px
+}
+
+.font-13{
+  font-size: 13px;
+}
+
+.results{
+  // margin-top: 70px;
+  z-index:1;
+  // padding-left: 40px
+}
+
+.navbar-space{
+  height: 100px;
+}
+
+#query{
+  color: $gray;
+  width: 70%;
+  margin-bottom: 20px
+}
+
+.search-bar form.form-inline input.btn.btn-primary.btn-xtra-padding{
+  margin-left:10px;
+  margin-top:-10px;
+}
+
+.wrap-elipsis{
+  text-overflow: ellipsis;
+  overflow-wrap: wrap
 }

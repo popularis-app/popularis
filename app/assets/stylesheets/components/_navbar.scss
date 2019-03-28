@@ -1,7 +1,13 @@
 .navbar {
   justify-content: space-between;
   background: white;
-  float: right
+  float: right;
+  width:100vw;
+  height:10%;
+  // padding:50px 50px 0px 50px;
+  background-color: #FFFFFF;
+    // z-index:999;
+    // position: fixed;
 }
 
 .navbar .navbar-collapse {
@@ -9,5 +15,6 @@
 }
 
 .navbar .navbar-brand img {
-  width: 40px;
+  width:150px;
+  margin:20px
 }
