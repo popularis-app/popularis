@@ -4,9 +4,10 @@
 }
 
 .wrapper{
-  height: 90vh;
+  height: 75vh;
   display: flex;
-  align-content: center
+  flex-direction: column;
+  justify-content: center;
 }
 
 .flex{
