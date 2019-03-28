@@ -12,11 +12,10 @@
         <%= submit_tag 'Buscar', class: 'btn btn-flat' %>
       <% end %>
     </div>
-    <div class="sentences">
-      <ul>
+    <!-- <div class="sentences"> -->
+      <ul class='sentence-list'>
         <% @sentences.each do |sentence| %>
-        <li>
-          <div class="sentence">
+        <li class="sentence">
             <div class="title">
               <%= link_to sentence_path(sentence), class: 'blue-header font-18' do %>
                 Sentencia del <%= sentence.capitalize_everything(sentence.institution) %> del <%= sentence.spanish_date %> [<%= sentence.parts.first.first_name %> vs. <%= sentence.parts.last.first_name %>]
@@ -31,10 +30,10 @@
                 <%# end %>
               </div>
             </div>
-          </div>
+          <!-- </div> -->
         </li>
         <% end %>
       </ul>
-    </div>
+    <!-- </div> -->
   </div>
 </div>

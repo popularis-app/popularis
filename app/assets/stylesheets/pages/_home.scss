@@ -24,22 +24,20 @@
   line-height: 1.5;
 }
 
-.lightest-gray-font{
+#query::placeholder{
   color: $lightest-gray
 }
 
-// #query{
-//   color: $lightest-gray
-// }
-
-.gray-font{
-  color: $gray
+.form-home{
+  margin:0 auto;
+  width: 60%;
 }
 
-// .curvier{
-//   border-radius: 20%
-// }
+.form-home #query{
+  margin: 0 auto;
+  width: 100%;
+}
 
-.btn-xtra-padding{
-  padding: 12px 30px
+.top-margin-20{
+  margin-top: 20px
 }
