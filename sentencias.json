@@ -31,9 +31,9 @@
   ],
   "Cuerpo":[
     {
-        "Tipo":"Head_1",
-        "Contenido":"VISTOS",
-        "Numero":0
+      "Tipo":"Head_1",
+      "Contenido":"VISTOS",
+      "Numero":0
     },
     {
       "Tipo":"Body_1",

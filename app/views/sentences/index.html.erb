@@ -23,7 +23,7 @@
               <% end %>
               <div class="description">
                <% selected = sentence.bodies.select do |body| %>
-                  <% body.content.include?(@query) %>
+                  <% body.content.include?(@query) && body.category != 'Head_1' %>
                 <% end %>
                 <p class='font-13 wrap-elipsis'>
                   <%= selected.first.content.first(600) %>
