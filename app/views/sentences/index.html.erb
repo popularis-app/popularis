@@ -1,6 +1,6 @@
 <div class="container">
   <div class="search-bar">
-    <%= form_tag sentences_path, method: :get do %>
+    <%= form_tag sentences_path, method: :get, class: 'form-inline' do %>
       <%= text_field_tag :query,
         params[:query],
         class: "form-control lightest-gray-font",
@@ -16,11 +16,11 @@
       <li>
         <div class="sentence">
           <div class="title">
-            <%= link_to sentence_path(sentence), class: 'blue-header' do %>
-              <h4>Sentencia del <%= sentence.capitalize_everything(sentence.institution) %> del <%= sentence.spanish_date %> [<%= sentence.parts.first.first_name %> vs. <%= sentence.parts.last.first_name %>]</h4>
+            <%= link_to sentence_path(sentence), class: 'blue-header font-18' do %>
+              Sentencia del <%= sentence.capitalize_everything(sentence.institution) %> del <%= sentence.spanish_date %> [<%= sentence.parts.first.first_name %> vs. <%= sentence.parts.last.first_name %>]
             <% end %>
             <div class="description">
-              <p><%= sentence.category %></p>
+              <p class='font-13'><%= sentence.category %></p>
 
             </div>
           </div>
