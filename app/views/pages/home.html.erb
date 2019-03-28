@@ -1,26 +1,23 @@
+<div class="navbar-space"></div>
 <div class="container">
-  <!-- <div class="row wrapper"> -->
-    <!-- <div class="col-6 offset-3 text-center"> -->
-      <div class='center-bat text-center'>
-        <div class="info">
-          <%= cl_image_tag("dto5gjux9rwrrlzr7san",
-          width: '40%') %>
-          <h5 class='second-line'>Buscador de sentencias panameñas</h5>
-        </div>
-      <!-- </div> -->
-      <div class="form flex flex-vertical">
-        <%= form_tag sentences_path, method: :get do %>
-          <%= text_field_tag :query,
-            params[:query],
-            class: "form-control",
-            placeholder: "incumplimiento de contrato"
-          %>
-          <br>
-          <%= submit_tag 'Buscar', class: 'btn btn-flat' %>
-        <% end %>
-      </div>
+  <div class='wrapper flex-vertical text-center'>
+    <div class="info">
+      <%= cl_image_tag("dto5gjux9rwrrlzr7san",
+      width: '40%') %>
+      <h5 class='second-line'>Buscador de sentencias panameñas</h5>
     </div>
-  <!-- </div> -->
+    <div class="form-home flex flex-vertical">
+      <%= form_tag sentences_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "incumplimiento de contrato" %>
+        <%= submit_tag 'Buscar', class: 'btn btn-flat top-margin-20' %>
+      <% end %>
+    </div>
+  </div>
 </div>
+
+
 
 
