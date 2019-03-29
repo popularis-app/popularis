@@ -1,7 +1,7 @@
 <div class="container">
   <div class="sentence">
     <div class="title">
-      <h2 class='blue-header'><%= @sentence.name_displayed %></h2>
+      <h2 class='blue-header header-size'><%= @sentence.name_displayed %></h2>
     </div>
     <div class="info">
       <h4><strong>Fecha:</strong> 25 de mayo de 1995
@@ -21,9 +21,19 @@
     </div>
     <div class="body">
       <% @sentence.bodies.each do |body| %>
-
-        <p><%= body.content %></p>
+        <% if body.category == 'Head_1' %>
+          <p><strong><%= body.content %></strong></p>
+        <% elsif body.category == 'Body_2' %>
+          <p class='quote'><em><%= body.content %></em></p>
+        <% else %>
+          <p><%= body.content %></p>
+        <% end %>
         <br>
+      <% end %>
+    </div>
+    <div class="notifieds">
+      <% @sentence.notifieds.each do |notified| %>
+        <p><%= notified.name %> [<%= notified.title %>]</p>
       <% end %>
     </div>
   </div>

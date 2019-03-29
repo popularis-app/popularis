@@ -3,6 +3,7 @@ class Sentence < ApplicationRecord
 	has_many :feedbacks
 	has_many :responsibles
 	has_many :parts
+  has_many :notifieds
 
   def capitalize_everything(attribute)
     words = attribute.split
