@@ -15,6 +15,13 @@ serialized_sentence = File.read(filepath)
 sentences = JSON.parse(serialized_sentence)
 sentences = sentences["Sentencias"]
 
+p 'Destroying everything......'
+Part.destroy_all
+Notified.destroy_all
+Responsible.destroy_all
+Body.destroy_all
+Sentence.destroy_all
+
 sentences.each do |sentence|
   p 'Creating sentence....'
 	s = Sentence.create!(name: sentence["Nombre"], entry_point: sentence["Entrada"], category: sentence["Tipo"], date: sentence["Fecha"], institution: sentence["Institucion"])
@@ -29,6 +36,13 @@ sentences.each do |sentence|
   sentence["Notificados"].each do |notificado|
   	Notified.create!(title: notificado["Titulo"], name: notificado["Nombre"], number: notificado["Numero"], sentence: s)
   end
+
+  p 'Creating responsibles.........'
+  p sentence['Responsable']
+ p sentence["Responsable"].first
+    r = Responsible.create!(name: sentence["Responsable"]['Nombre'], category: sentence["Responsable"]['Tipo'], sentence: s)
+    p r
+  # end
 
 	p 'Creating parts.........'
 	sentence["Partes"].each do |parte|

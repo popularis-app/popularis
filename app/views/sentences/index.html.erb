@@ -22,13 +22,18 @@
               <% end %>
             </div>
             <div class="description">
-             <% selected = sentence.bodies.select do |body| %>
-                <% body.content.include?(@query) && body.category != 'Head_1' %>
-              <% end %>
-              <p class='font-13 wrap-elipsis'>
-                <%= selected.first.content.first(600) %>
-              </p>
-              <%# end %>
+              <% if !@query.nil? %>
+               <% selected = sentence.bodies.select do |body| %>
+                  <% body.content.include?(@query) && body.category != 'Head_1' %>
+                <% end %>
+                <p class='font-13 wrap-elipsis'>
+                  <%= selected.first.content.first(600) %>
+                </p>
+              <% else %>
+                <p class='font-13 wrap-elipsis'>
+                  <% sentence.bodies.first.content.first(600) %>
+                </p>
+             <% end %>
             </div>
             <!-- </div> -->
           <!-- </div> -->
