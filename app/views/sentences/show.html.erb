@@ -1,2 +1,30 @@
-<h1>Sentences#show</h1>
-<p>Find me in app/views/sentences/show.html.erb</p>
+<div class="container">
+  <div class="sentence">
+    <div class="title">
+      <h2 class='blue-header'><%= @sentence.name_displayed %></h2>
+    </div>
+    <div class="info">
+      <h4><strong>Fecha:</strong> 25 de mayo de 1995
+        <br>
+        <strong>Demandante:</strong> <%= @sentence.capitalize_everything(@sentence.parts.first.name) %>
+        <br>
+        <strong>Demandado:</strong> <%= @sentence.capitalize_everything(@sentence.parts.last.name) %>
+        <br>
+      </h4>
+      <h6>Tribunal Superior, Primer Distrito Judicial</h6>
+    </div>
+    <br>
+    <div class="sentence-info">
+      <h6><strong>Entrada:</strong> <%= @sentence.entry_point %></h6>
+      <h6><%= @sentence.category %> por <%= @sentence.parts.first.name %> contra <%= @sentence.parts.last.name %></h6>
+      <h6><strong>Institución:</strong> <%= @sentence.institution %></h6>
+    </div>
+    <div class="body">
+      <% @sentence.bodies.each do |body| %>
+
+        <p><%= body.content %></p>
+        <br>
+      <% end %>
+    </div>
+  </div>
+</div>
