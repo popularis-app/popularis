@@ -11,4 +11,28 @@
   font-size: medium
 }
 
+// .side-items{
+//   display: flex;
+//   justify-content: space-between;
+// }
 
+.show-wrapper {
+  justify-content: space-around;
+  width: 100vw;
+}
+
+.back-btn {
+  margin: 0 auto;
+}
+
+.feedbacks {
+  margin: 0 auto;
+}
+
+.red{
+  color: #7E1313
+}
+
+.blue{
+  color: $blue;
+}
