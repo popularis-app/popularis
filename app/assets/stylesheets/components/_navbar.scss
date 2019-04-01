@@ -13,6 +13,11 @@
     // position: fixed;
 }
 
+.home-menu{
+  display: flex;
+  justify-content: flex-end;
+}
+
 .navbar .navbar-collapse {
   flex-grow: 0;
 }
