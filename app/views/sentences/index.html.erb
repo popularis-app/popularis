@@ -12,30 +12,46 @@
         <%= submit_tag 'Buscar', class: 'btn btn-flat' %>
         <% end %>
       </div>
-      <ul class='sentence-list'>
-        <% @sentences.each do |sentence| %>
-          <li class="sentence">
-            <div class="title">
-              <%= link_to sentence_path(sentence), class: 'blue-header font-18' do %>
-              <%= sentence.name_displayed %>
-              <% end %>
-            </div>
-            <div class="description">
-              <% if !@query.nil? %>
-                <% selected = sentence.bodies.select do |body| %>
-                  <% body.content.include?(@query) && body.category != 'Head_1' %>
+      <% if @sentences == [] %>
+        <p style='height:70vh'>No hemos encontrado ninguna sentencia con esa información. Por favor intente denuevo.</p>
+      <% else %>
+        <ul class='sentence-list'>
+          <% @sentences.each do |sentence| %>
+            <li class="sentence">
+              <div class="title">
+                <%= link_to sentence_path(sentence), class: 'blue-header font-18' do %>
+                <%= sentence.name_displayed %>
                 <% end %>
-                <p class='font-13 wrap-elipsis'>
-                  <%= selected.first.content.first(500) %>
-                </p>
-              <% else %>
-                <p class='font-13 wrap-elipsis'>
-                  <%= sentence.bodies.second.content.first(500) %>
-                </p>
-              <% end %>
-            </div>
-          </li>
+              </div>
+              <div class="description">
+                <% if !@query.nil? %>
+                  <% selected = sentence.bodies.select do |body| %>
+                    <% body.content.include?(@query) && body.category != 'Head_1' %>
+                  <% end %>
+                  <% if selected == [] %>
+                    <p class='font-13 wrap-elipsis'>
+                      <%= sentence.bodies.second.content.first(500) %>
+                    </p>
+                  <% else %>
+                    <p class='font-13 wrap-elipsis'>
+                      <%= selected.first.content.first(500) %>
+                    </p>
+                  <% end %>
+                <% else %>
+                  <p class='font-13 wrap-elipsis'>
+                    <%= sentence.bodies.second.content.first(500) %>
+                  </p>
+                <% end %>
+              </div>
+            </li>
+          <% end %>
+        </ul>
         <% end %>
-      </ul>
     </div>
   </div>
+
+
+
+
+
+

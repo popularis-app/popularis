@@ -1,5 +1,5 @@
-<div class="navbar navbar-expand-sm navbar-light">
   <% if controller_name == 'pages' && action_name == 'home' %>
+    <div class="navbar navbar-expand-sm navbar-light home-menu">
     <ul class="navbar-nav">
       <li class="nav-item">
         <%= link_to "Inicio", root_path, class: 'small-text gray-font' %>
@@ -9,7 +9,9 @@
         <%= link_to "Sobre Nosotros", about_us_path, class: 'small-text gray-font' %>
       </li>
     </ul>
+</div>
   <% else %>
+    <div class="navbar navbar-expand-sm navbar-light">
     <%= link_to root_path, class: "navbar-brand" do %>
       <%= cl_image_tag 'dto5gjux9rwrrlzr7san' %>
     <% end %>
@@ -22,7 +24,7 @@
           <%= link_to "Sobre Nosotros", about_us_path, class: 'small-text gray-font' %>
         </li>
       </ul>
+    </div>
   <% end %>
-</div>
 
 
