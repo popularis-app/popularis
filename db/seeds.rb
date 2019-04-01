@@ -6,13 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
 require 'json'
+require 'open-uri'
 
-p "Parsing JSON file"
-filepath = 'sentencias.json'
-serialized_sentence = File.read(filepath)
-sentences = JSON.parse(serialized_sentence)
+url = 'https://juliet-tech.github.io/popularis-api/sentences/index.json'
+serialized_sentences = open(url).read
+sentences = JSON.parse(serialized_sentences)
 sentences = sentences["Sentencias"]
 
 p 'Destroying everything......'
@@ -20,6 +19,7 @@ Part.destroy_all
 Notified.destroy_all
 Responsible.destroy_all
 Body.destroy_all
+Feedback.destroy_all
 Sentence.destroy_all
 
 sentences.each do |sentence|
@@ -38,15 +38,11 @@ sentences.each do |sentence|
   end
 
   p 'Creating responsibles.........'
-  p sentence['Responsable']
- p sentence["Responsable"].first
-    r = Responsible.create!(name: sentence["Responsable"]['Nombre'], category: sentence["Responsable"]['Tipo'], sentence: s)
-    p r
-  # end
+    Responsible.create!(name: sentence["Responsable"]['Nombre'], category: sentence["Responsable"]['Tipo'], sentence: s)
 
 	p 'Creating parts.........'
 	sentence["Partes"].each do |parte|
-		part = Part.create!(relevance: parte["Relevancia"], name: parte["Nombre"], title: parte["Titulo"], category: parte["Tipo"], national_id: parte["Cedula"], domicile: parte["Domicilio"], sentence: s)
+		Part.create!(relevance: parte["Relevancia"], name: parte["Nombre"], title: parte["Titulo"], category: parte["Tipo"], national_id: parte["Cedula"], domicile: parte["Domicilio"], sentence: s)
 	end
 end
 
