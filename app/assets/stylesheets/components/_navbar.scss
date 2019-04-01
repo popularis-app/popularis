@@ -36,7 +36,15 @@
   height: 80px;
 }
 
-// .navbar-nav{
+.navbar-nav{
 //   display: flex;
-//   justify-content: space-between;
-// }
+  justify-content: space-between;
+  width: 15%
+}
+
+@media (min-width: 576px) {
+.navbar-expand-sm .navbar-nav {
+  justify-content: space-between;
+  }
+}
+
