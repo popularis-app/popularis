@@ -1,9 +1,10 @@
 .blue-header{
   color: $blue;
-  &:hover{
+}
+
+.blue-header.font-18:hover{
     color: $gray
   }
-}
 
 .sentence-list{
   list-style: none;
@@ -41,4 +42,7 @@
   overflow-wrap: wrap
 }
 
+.search-bar{
+  padding-top: 5px
+}
 

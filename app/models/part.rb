@@ -11,6 +11,8 @@ class Part < ApplicationRecord
   def first_name
     if name.blank?
       ""
+    elsif name.first(2) == 'La' || 'El' || 'Juez'
+      name.split.second.capitalize
     else
       name.split.first.capitalize
     end

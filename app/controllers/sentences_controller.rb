@@ -22,5 +22,6 @@ class SentencesController < ApplicationController
   end
 
   def show
+    @sentence = Sentence.find(params[:id])
   end
 end

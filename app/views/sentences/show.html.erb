@@ -1,2 +1,77 @@
-<h1>Sentences#show</h1>
-<p>Find me in app/views/sentences/show.html.erb</p>
+<div class="navbar-space"></div>
+<div class="show-wrapper flex">
+  <div class="back-btn">
+    <i class="fas fa-angle-double-left blue-header"></i>
+  </div>
+  <div class="container">
+    <div class="sentence">
+      <div class="title">
+        <h2 class='blue-header header-size'><%= @sentence.name_displayed %></h2>
+      </div>
+      <br>
+      <div class="info">
+        <ul>
+          <li>
+            <h4><strong>Fecha:</strong> 25 de mayo de 1995</h4>
+          </li>
+          <li>
+            <h4><strong>Demandante:</strong> <%= @sentence.capitalize_everything(@sentence.parts.first.name) %></h4>
+          </li>
+          <li>
+            <h4><strong>Demandado:</strong> <%= @sentence.capitalize_everything(@sentence.parts.last.name) %></h4>
+          </li>
+          <li>
+            <h4><strong>Entrada:</strong> <%= @sentence.entry_point %></h4>
+          </li>
+          <li>
+            <h4><strong>Institución:</strong> <%= @sentence.institution %></h4>
+          </li>
+          <li>
+            <h4><strong>Responsable:</strong> <%= @sentence.responsibles.first.name %>[<%= @sentence.responsibles.first.category %>]</h4>
+          </li>
+          <li>
+            <h4><%= @sentence.category %> por <%= @sentence.parts.first.name %> contra <%= @sentence.parts.last.name %></h4>
+          </li>
+        </ul>
+      </div>
+      <br>
+      <div class="body">
+        <% @sentence.bodies.each do |body| %>
+        <% if body.category == 'Head_1' %>
+        <p><strong><%= body.content %></strong></p>
+        <% elsif body.category == 'Body_2' %>
+        <p class='quote'><em><%= body.content %></em></p>
+        <% elsif body.content == 'Notifíquese.' %>
+        <p><strong><%= body.content.upcase %></strong></p>
+        <% else %>
+        <p><%= body.content %></p>
+        <% end %>
+        <% end %>
+      </div>
+      <div class="notifieds">
+        <% @sentence.notifieds.each do |notified| %>
+        <p><%= notified.name %> [<%= notified.title %>]</p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="feedbacks centering-100vh">
+
+    <%= simple_form_for Feedback.new do |f|  %>
+      <%= f.hidden_field :content, value: 'Justo era lo que buscaba' %>
+      <%= f.hidden_field :sentence_id, value: @sentence.id %>
+      <%= button_tag(type: 'submit', class: "feedback-btn red") do %>
+        <div class="text">Justo lo que buscaba</div>
+        <i class="far fa-thumbs-up"></i>
+       <% end %>
+    <% end %>
+    <%= simple_form_for Feedback.new do |f|  %>
+      <%= f.hidden_field :content, value: 'No era lo que buscaba' %>
+      <%= f.hidden_field :sentence_id, value: @sentence.id %>
+      <%= button_tag(type: 'submit', class: "feedback-btn blue") do %>
+        <i class="far fa-thumbs-down"></i>
+        <div class="text">No era lo que buscaba</div>
+       <% end %>
+    <% end %>
+  </div>
+</div>

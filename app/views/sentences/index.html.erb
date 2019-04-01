@@ -3,37 +3,39 @@
   <div class="results">
     <div class="search-bar text-center">
       <%= form_tag sentences_path, method: :get, class: 'form-inline' do %>
-        <%= text_field_tag :query,
-          params[:query],
-          class: "form-control",
-          placeholder: "incumplimiento de contrato"
+      <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+        placeholder: "incumplimiento de contrato"
         %>
         <br>
         <%= submit_tag 'Buscar', class: 'btn btn-flat' %>
-      <% end %>
-    </div>
-    <!-- <div class="sentences"> -->
+        <% end %>
+      </div>
       <ul class='sentence-list'>
         <% @sentences.each do |sentence| %>
-        <li class="sentence">
+          <li class="sentence">
             <div class="title">
               <%= link_to sentence_path(sentence), class: 'blue-header font-18' do %>
-                Sentencia del <%= sentence.capitalize_everything(sentence.institution) %> del <%= sentence.spanish_date %> [<%= sentence.parts.first.first_name %> vs. <%= sentence.parts.last.first_name %>]
+              <%= sentence.name_displayed %>
               <% end %>
-              <div class="description">
-               <% selected = sentence.bodies.select do |body| %>
+            </div>
+            <div class="description">
+              <% if !@query.nil? %>
+                <% selected = sentence.bodies.select do |body| %>
                   <% body.content.include?(@query) && body.category != 'Head_1' %>
                 <% end %>
                 <p class='font-13 wrap-elipsis'>
-                  <%= selected.first.content.first(600) %>
+                  <%= selected.first.content.first(500) %>
                 </p>
-                <%# end %>
-              </div>
+              <% else %>
+                <p class='font-13 wrap-elipsis'>
+                  <%= sentence.bodies.second.content.first(500) %>
+                </p>
+              <% end %>
             </div>
-          <!-- </div> -->
-        </li>
+          </li>
         <% end %>
       </ul>
-    <!-- </div> -->
+    </div>
   </div>
-</div>
