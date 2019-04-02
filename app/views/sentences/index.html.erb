@@ -34,7 +34,14 @@
                     </p>
                   <% else %>
                     <p class='font-13 wrap-elipsis'>
-                      <%= selected.first.content.first(500) %>
+                      <% highlighted = selected.first.content.split.map do |word| %>
+                        <% if word == (@query || "#{@query}," || "#{@query}.") %>
+                           <span class='highlighted'><%= word %></span>
+                        <% else %>
+                          <%= word %>
+                        <% end %>
+                      <% end %>
+                      <%= raw highlighted.join(" ").first(450) %>
                     </p>
                   <% end %>
                 <% else %>
