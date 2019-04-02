@@ -15,7 +15,6 @@ class SentencesController < ApplicationController
   		@sentences = Sentence.joins(:bodies).where(sql_query, query: "%#{params[:query]}%")
       # Antes de solo display las .uniq -> orderlas en orden dependiendo de la que mas salga repetida.... weighted display on index
       @sentences = @sentences.uniq
-
   	else
   		@sentences = Sentence.all
   	end
