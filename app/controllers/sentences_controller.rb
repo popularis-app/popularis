@@ -22,7 +22,6 @@ class SentencesController < ApplicationController
 
       # Antes de solo display las .uniq -> orderlas en orden dependiendo de la que mas salga repetida.... weighted display on index
       @sentences = @sentences.uniq
-
   	else
   		@sentences = Sentence.all
   	end
