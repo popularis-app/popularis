@@ -13,6 +13,13 @@ class SentencesController < ApplicationController
       OR bodies.category @@ :query
   		"
   		@sentences = Sentence.joins(:bodies).where(sql_query, query: "%#{params[:query]}%")
+      # query_qty = @sentences.each_with_object(Hash.new(0)) { |sentence, counts| counts[sentence] += 1 }
+      @sentences.sort_by do |sentence|
+        sentence.bodies.each do |body|
+          body.content.count(@query)
+        end
+      end
+
       # Antes de solo display las .uniq -> orderlas en orden dependiendo de la que mas salga repetida.... weighted display on index
       @sentences = @sentences.uniq
 
