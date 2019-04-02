@@ -35,7 +35,7 @@
                   <% else %>
                     <p class='font-13 wrap-elipsis'>
                       <% highlighted = selected.first.content.split.map do |word| %>
-                        <% if word == (@query || "#{@query}," || "#{@query}.") %>
+                        <% if word == (@query || @query.upcase || @query.capitalize || @query.downcase ||"#{@query}," || "#{@query}.") %>
                            <span class='highlighted'><%= word %></span>
                         <% else %>
                           <%= word %>
