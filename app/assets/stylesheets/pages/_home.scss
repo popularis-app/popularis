@@ -1,3 +1,5 @@
+
+// Standarizing behaviors
 html,body
 {
     width: 100%;
@@ -18,14 +20,10 @@ textarea {
   margin: 0;
 }
 
-
-
 button,
 input {
   overflow: visible;
 }
-
-
 
 button,
 select {
@@ -39,7 +37,6 @@ button{
   padding:0;
   background-color: inherit
 }
-
 
 button,
 [type="button"],
@@ -60,7 +57,6 @@ button,
   border: none;
   border-radius: 0;
 }
-
 
 // Specific CSS for your home-page
 .small-text{
@@ -119,4 +115,24 @@ ul{
 
 .gray-font{
   color: $gray
+}
+  .wrapper{
+    height: 65vh
+  }
+
+// Media query for mobile phones
+@media only screen and (max-width: 768px) {
+  div.info img{
+    width: 145px;
+  }
+
+  .pages.home .container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .small-text{
+    font-size: 13px;
+  }
+
 }

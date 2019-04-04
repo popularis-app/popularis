@@ -64,5 +64,24 @@
   line-height: 35px;
 }
 
+// Media query responsiveness for mobile phones
+@media only screen and (max-width: 768px) {
+  .feedbacks{
+    display: none
+  }
+  .header-size {
+    font-size: medium;
+  }
+  .info h4 {
+      font-size: small;
+  }
+  .body p {
+    font-size: small;
+  }
+  .sentences.show .container{
+    padding-right: 60px;
+  }
+}
+
 
 
