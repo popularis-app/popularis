@@ -116,6 +116,9 @@ ul{
 .gray-font{
   color: $gray
 }
+  .wrapper{
+    height: 65vh
+  }
 
 // Media query for mobile phones
 @media only screen and (max-width: 768px) {
@@ -123,7 +126,7 @@ ul{
     width: 145px;
   }
 
-  .container {
+  .pages.home .container {
     display: flex;
     justify-content: center;
   }
