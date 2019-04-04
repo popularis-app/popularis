@@ -37,4 +37,10 @@
   }
 }
 
+// Responsiveness for mobile
+@media only screen and (max-width: 768px) {
+  .footer-text a{
+    font-size: 13px;
+  }
+}
 

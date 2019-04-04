@@ -64,5 +64,24 @@
   line-height: 35px;
 }
 
+// Media query responsiveness for mobile phones
+@media only screen and (max-width: 768px) {
+  #query{
+    width: 55%
+  }
+
+  .font-18desktop-14mobile{
+    font-size: 14px
+  }
+
+  .sentence-list {
+    padding: 10px;
+  }
+
+  .search-bar {
+    padding-left: 10px;
+  }
+}
+
 
 
