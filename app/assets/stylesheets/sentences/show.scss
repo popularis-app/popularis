@@ -66,20 +66,20 @@
 
 // Media query responsiveness for mobile phones
 @media only screen and (max-width: 768px) {
-  #query{
-    width: 55%
+  .feedbacks{
+    display: none
   }
-
-  .font-18desktop-14mobile{
-    font-size: 14px
+  .header-size {
+    font-size: medium;
   }
-
-  .sentence-list {
-    padding: 10px;
+  .info h4 {
+      font-size: small;
   }
-
-  .search-bar {
-    padding-left: 10px;
+  .body p {
+    font-size: small;
+  }
+  .sentences.show .container{
+    padding-right: 60px;
   }
 }
 

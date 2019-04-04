@@ -54,3 +54,26 @@
 .min-height-75vh{
   min-height: 75vh;
 }
+
+@media only screen and (max-width: 768px) {
+  .min-height-75vh{
+    min-height: 65vh
+  }
+
+  #query{
+    width: 55%
+  }
+
+  .font-18desktop-14mobile{
+    font-size: 14px
+  }
+
+  .sentence-list {
+    padding: 10px;
+  }
+
+  .search-bar {
+    padding-left: 10px;
+  }
+}
+
