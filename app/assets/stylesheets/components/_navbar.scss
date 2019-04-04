@@ -42,14 +42,22 @@
 }
 
 .navbar-nav{
-//   display: flex;
-  justify-content: space-between;
-  width: 15%
+  display: block;
+  // justify-content: space-between;
+  // width: 15%
 }
 
 @media (min-width: 576px) {
-.navbar-expand-sm .navbar-nav {
-  justify-content: space-between;
+  .navbar-expand-sm .navbar-nav {
+    justify-content: space-between;
+  }
+
+  ul.navbar-nav li.nav-item a{
+    font-size: 10px;
+  }
+
+  ul.navbar-nav li.nav-item {
+    font-size: 10px
   }
 }
 
