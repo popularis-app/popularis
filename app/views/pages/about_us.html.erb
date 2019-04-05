@@ -3,7 +3,7 @@
   <div class="popularis-info container flex margin-auto">
 
      <div class="team-pic">
-       <%= cl_image_tag "samples/imagecon", alt: 'Popularis' %>
+       <%= cl_image_tag "samples/imagecon-group", alt: 'Popularis' %>
      </div>
      <div class="team-description">
        <h2 class='text-center title-about-us margin-auto'>¿QUÉ ES POPULARIS?</h2>
@@ -17,14 +17,14 @@
   <div class="intro text-center container">
     <h2 class="title-about-us">CONÓCENOS</h2>
     <br>
-    <p class='width-60pg margin-auto medium-font'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus voluptatem repellat velit impedit inventore cupiditate pariatur reprehenderit fuga perferendis voluptates ex esse assumenda delectus repellendus, error ratione, aliquam illum veniam!</p>
+    <p class='team-desc'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus voluptatem repellat velit impedit inventore cupiditate pariatur reprehenderit fuga perferendis voluptates ex esse assumenda delectus repellendus, error ratione, aliquam illum veniam!</p>
   </div>
 
    <div class="container members">
      <div class="row text-center">
       <% @members.each do |member| %>
        <div class="col-xs-12 col-md-6 col-lg-4 member">
-         <%= cl_image_tag("samples/people/kitchen-bar.jpg",aspect_ratio:"1:1", background:"#262c35", border:"5px_solid_rgb:ff0000", gravity:"face:center", width:1000, crop:"fill", class:'rounded-circle') %>
+         <%= cl_image_tag("samples/people/kitchen-bar.jpg",aspect_ratio:"1:1", background:"#262c35", border:"5px_solid_rgb:ff0000", gravity:"face:center", width:1000, crop:"fill", class:'rounded-circle', alt: "#{member['Nombre']} #{member['Apellido']}") %>
          <h4 class='margin-10'><%= member['Nombre'] %> <%= member['Apellido'] %></h4>
          <p><%= member['Rol'] %></p>
        </div>

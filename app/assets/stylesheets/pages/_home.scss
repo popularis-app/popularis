@@ -121,7 +121,11 @@ ul{
   color: $gray
 }
 
-.width-100{
+.width-60pg{
+  width: 60%
+}
+
+.width-100pg{
   width: 100%
 }
 
@@ -133,9 +137,6 @@ ul{
   background-color: $lightest-gray
 }
 
-.width-60pg{
-  width: 60%
-}
 
 .margin-auto{
   margin: auto
