@@ -1,4 +1,3 @@
-
 // Standarizing behaviors
 html,body
 {
@@ -64,7 +63,7 @@ button,
 }
 
 .wrapper{
-  height: 65vh;
+  height: 70vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -136,7 +135,6 @@ ul{
 .gray-bg{
   background-color: $lightest-gray
 }
-
 
 .margin-auto{
   margin: auto
