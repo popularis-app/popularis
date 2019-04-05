@@ -1,16 +1,129 @@
+.popularis-info {
+ justify-content: space-around;
+ width: 100%;
+ height: 100%;
+ padding: 30px 15px;
+}
+
 .team-pic > img {
  width: 100%;
 }
-
-.popularis-info {
- justify-content: space-between;
- width: 100%;
-}
-
 .team-pic {
- width: 50%;
+ width: 40%;
+ border: 1px solid black;
+ height: 70%;
+ box-shadow: 4px 4px 4px $light-gray;
+ margin: 1% auto
 }
 
 .team-description {
- width: 50%;
+ width: 40%;
 }
+
+.team-description p {
+  font-size: small
+}
+
+.title-about-us{
+  font-family: 'Rubik';
+  font-weight: 900;
+}
+
+
+.team-info{
+  padding: 100px;
+}
+
+.members{
+  margin-top: 30px;
+}
+
+.member img{
+  width: 45%;
+}
+
+.member{
+  padding: 15px;
+}
+
+.member h4{
+  font-size: large
+}
+
+.pages.about_us .footer{
+  margin-top: 0;
+  background-color: $white
+}
+
+.team-desc{
+  margin: auto;
+  width: 60%;
+  font-size: medium;
+}
+
+  .team-description{
+    margin: auto
+  }
+// Media query for mobile phones
+@media only screen and (max-width: 768px) {
+  .popularis-info{
+    height: 100%;
+    flex-direction: column;
+    padding-top: 0px;
+  }
+
+  .team-pic, .team-description{
+    width: 100%;
+    // flex-grow: 1
+  }
+
+  .team-pic{
+    height: 40%;
+    margin-bottom: 30px;
+  }
+
+  .team-info{
+    padding: 30px 0px 0px 10px;
+  }
+
+  .team-desc{
+    margin: 0px;
+    width: 100%;
+  }
+
+  .team-description p{
+    padding: 0px 20px;
+  }
+}
+
+// Media query for tablets
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  .popularis-info{
+    height: 100%;
+
+  }
+
+  .title-about-us{
+    font-size: x-large
+  }
+
+
+  .team-description p{
+    font-size: small;
+  }
+
+  .team-desc{
+    margin: 0px;
+    width: 100%;
+    font-size: small
+  }
+
+  .member p{
+    font-size: small
+  }
+
+
+}
+
+

@@ -64,7 +64,7 @@ button,
 }
 
 .wrapper{
-  height: 75vh;
+  height: 65vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -109,7 +109,11 @@ ul{
   padding: 0
 }
 
-.margin-15{
+.margin-10{
+  margin: 10px
+}
+
+.margin-b-15{
   margin-bottom: 15px;
 }
 
@@ -117,9 +121,30 @@ ul{
   color: $gray
 }
 
-.wrapper{
-    height: 65vh
-  }
+.width-60pg{
+  width: 60%
+}
+
+.width-100pg{
+  width: 100%
+}
+
+.height-60vh{
+  height: 60vh
+}
+
+.gray-bg{
+  background-color: $lightest-gray
+}
+
+
+.margin-auto{
+  margin: auto
+}
+
+.medium-font{
+  font-size: medium
+}
 
 // Media query for mobile phones
 @media only screen and (max-width: 768px) {
