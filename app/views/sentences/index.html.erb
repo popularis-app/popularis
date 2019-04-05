@@ -20,7 +20,7 @@
             <li class="sentence">
               <div class="title">
                 <%= link_to sentence_path(sentence), class: 'blue-header font-18desktop-14mobile' do %>
-                <%= sentence.name_displayed %>
+                  <%= sentence.name_displayed %>
                 <% end %>
               </div>
               <div class="description">
@@ -41,7 +41,6 @@
                           <%= word %>
                         <% end %>
                       <% end %>
-                      <%#= highlighted.join(" ").first(450) %>
                       <%= raw highlighted.join(" ").first(450) %>
                     </p>
                   <% end %>
