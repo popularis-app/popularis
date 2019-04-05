@@ -109,7 +109,11 @@ ul{
   padding: 0
 }
 
-.margin-15{
+.margin-10{
+  margin: 10px
+}
+
+.margin-b-15{
   margin-bottom: 15px;
 }
 
@@ -123,6 +127,22 @@ ul{
 
 .height-60vh{
   height: 60vh
+}
+
+.gray-bg{
+  background-color: $lightest-gray
+}
+
+.width-60pg{
+  width: 60%
+}
+
+.margin-auto{
+  margin: auto
+}
+
+.medium-font{
+  font-size: medium
 }
 
 // Media query for mobile phones

@@ -1,7 +1,8 @@
 .popularis-info {
  justify-content: space-around;
  width: 100%;
- height: 60vh;
+ height: 50vh;
+ padding-top: 30px;
 }
 
 .team-pic > img {
@@ -9,22 +10,44 @@
 }
 .team-pic {
  width: 40%;
- border: 3px solid black;
- height: 70%
+ border: 1px solid black;
+ height: 70%;
+ box-shadow: 4px 4px 4px $light-gray;
+ margin: 1% auto
 }
 
 .team-description {
  width: 40%;
 }
 
-.pages.about-us h2.title{
+.title-about-us{
   font-family: 'Rubik';
   font-weight: 900;
   // font-size: 56px;
-  line-height: 10px;
+  // line-height: 10px;
 }
 
-.gray-bg{
-  background-color: $lightest-gray
+.team-info{
+  padding: 100px;
 }
 
+.members{
+  margin-top: 30px;
+}
+
+.member img{
+  width: 45%;
+}
+
+.member{
+  padding: 15px;
+}
+
+.member h4{
+  font-size: large
+}
+
+.pages.about_us .footer{
+  margin-top: 0;
+  background-color: $white
+}
