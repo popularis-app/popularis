@@ -64,7 +64,7 @@ button,
 }
 
 .wrapper{
-  height: 75vh;
+  height: 65vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -116,10 +116,6 @@ ul{
 .gray-font{
   color: $gray
 }
-
-.wrapper{
-    height: 65vh
-  }
 
 .width-100{
   width: 100%
