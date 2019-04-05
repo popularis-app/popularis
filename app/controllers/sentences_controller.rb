@@ -19,14 +19,11 @@ class SentencesController < ApplicationController
 
       # @sentences = @sentences.sort_by { |sentence| @sentences.grep(sentence).size }
 
-
       # @sentences.each do |sentence|
       #  sentence.bodies.map do |body|
       #     body.content.count(@query)
       #   end
       # end
-
-
 
       # Antes de solo display las .uniq -> orderlas en orden dependiendo de la que mas salga repetida.... weighted display on index
       # @sentences = @sentences.uniq
