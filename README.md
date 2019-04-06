@@ -52,9 +52,25 @@ Explain what these tests test and why
 Give an example
 ``` -->
 
-## Search engine logic
+## Buscador
 
+Esta sección busca explicar lo que sucede cada vez que alguien accede al buscador y llega a `sentences#index`:
 
+(1) Si el usuario no escribió nada, verá todas las sentencias en el orden como estan guardadas en la base de datos.
+
+(2) Si el usuario escribió una palabra(`@query`), la plataforma buscara una palabra similar a esa adentro de:
+ ** Nombre de cada sentencia
+ ** Tipo de cada sentencia
+ ** Institución de cada sentencia
+ ** Entrada de cada sentencia
+ ** Contenido del Cuerpo
+ ** Tipo de Cuerpo
+
+(3) Luego se crea un nuevo hash: `{sentencia: cantidad}` -> donde `sentencia` es el objeto en cuestión y la `cantidad` es el número de veces que aparece `@query` en las columnas establecidas en el punto 2.
+
+(4) Se ordenan estas de manera que las que tienen el número más alto van al inicio.
+
+--> Para el futuro, recomiendo utilizar [PgSearch](https://github.com/Casecommons/pg_search) para agregarle más funcionalidades al buscador.
 
 ## Para manipular la base de datos
 
