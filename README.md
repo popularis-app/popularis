@@ -18,16 +18,18 @@ postgres
 
 ### Instalación
 
-(1) Fork/clone este repository para poder ver el código en tu computadora
+(1) Fork/clone este repository para poder ver el código localmente en tu computadora <br>
 (2) En la terminal:
 
 ```
 bundle
 rails db:migrate db:seed
-rails s
 ```
 
-(3) Con eso, deberías poder ver el sitio en <code>http://localhost:3000</code> en el navegador.
+(3) Asegurarse de tener las `environment variables` (por ej, API keys) escritas en su código local adentro de `popularis/.env`.
+
+(4) Para crear el servidor local, corra `rails server` en el Terminal y deberías poder ver el sitio en <code>http://localhost:3000</code> en el navegador.
+
 
 <!--
 ## Running the tests
@@ -50,26 +52,59 @@ Explain what these tests test and why
 Give an example
 ``` -->
 
+## Search engine logic
+
+
+
+## Para manipular la base de datos
+
+(1) En el Terminal:
+
+```
+rails console
+Sentence.all
+Feedback.all
+Sentence.first.bodies.all
+```
+
+(2) De no escribir nada en la barra del buscador, podrá ver todas las sentencias en `http://localhost:3000/sentences`
+
+(3) Para ver todos los feedbacks recibidos puede acceder a `http://localhost:3000/feedbacks`
+
 ## Deployment
 
-El servidor del sitio en producción está en Heroku actualmente bajo el sitio <code>http://popularis.herokuapp.com</code>
+El servidor en producción está en Heroku actualmente bajo el sitio <code>http://popularis.herokuapp.com</code>
 
-De tener algún inconveniente con el sitio en producción, empiece por correr <code>heroku logs</code> en el Terminal.
+De tener algún inconveniente en producción, empiece por correr <code>heroku logs</code> en el Terminal y la documentación de [Heroku](https://devcenter.heroku.com/).
 
+## Para el futuro
 
+He dejado instalado [Devise](https://github.com/plataformatec/devise) para cuando estén listos para crear Usuarios en la plataforma.
+
+En ese sentido, falta agregar tambien el Admin interface para poder visualizar la data y agregar [Pundit](https://github.com/varvet/pundit) para trabajar el authorization de los usuarios a travez de la plataforma.
+
+## .env variables
+
+Para el manejo de las environment variables, se ha utilizado [Dotenv](https://github.com/bkeepers/dotenv)
+
+* En development:
+
+En `popularis/.env` podrá encontrar todas las `environment variables` para cualquier modificación. Este file solo existe localmente y quien quiera trabajar la plataforma deberá tener las correctas en su file local.
+
+* En producción:
+
+Una vez publique el sitio online, deberá escribir en el Terminal `heroku config:set API_KEY=adjhds6shqqhnekl`para enviar las variables correpsondientes al servidor.
+
+## Para agregar nuevas sentencias acceda a [Popularis API](https://github.com/juliet-tech/popularis-api)
 
 ## Stack
 
 * [Ruby on Rails](https://guides.rubyonrails.org/getting_started.html) - MVC Ruby framework
-* [Simple Form](https://github.com/plataformatec/simple_form) - Gem para agilizar creación de formularios
-* [Cloudinary](https://cloudinary.com/) - Archivador de  media assets
 * [Dotenv](https://github.com/bkeepers/dotenv) - Gem para guardar en secreto los env variables
+* [Cloudinary](https://cloudinary.com/) - Archivador de  media assets
+* [Fullstory](https://www.fullstory.com/) - Tracking
+* [Simple Form](https://github.com/plataformatec/simple_form) - Gem para agilizar creación de formularios
 * [FontAwesome](https://fontawesome.com/) - Símbolos en la plataforma
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
 
 ## Programadora
 
