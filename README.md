@@ -83,7 +83,7 @@ He dejado instalado [Devise](https://github.com/plataformatec/devise) para cuand
 
 En ese sentido, falta agregar tambien el Admin interface para poder visualizar la data y agregar [Pundit](https://github.com/varvet/pundit) para trabajar el authorization de los usuarios a travez de la plataforma.
 
-# .env variables
+## .env variables
 
 Para el manejo de las environment variables, se ha utilizado [Dotenv](https://github.com/bkeepers/dotenv)
 
@@ -95,7 +95,7 @@ En `popularis/.env` podrá encontrar todas las `environment variables` para cual
 
 Una vez publique el sitio online, deberá escribir en el Terminal `heroku config:set API_KEY=adjhds6shqqhnekl`para enviar las variables correpsondientes al servidor.
 
-# Para agregar nuevas sentencias acceda a [Popularis API](https://github.com/juliet-tech/popularis-api)
+## Para agregar nuevas sentencias acceda a [Popularis API](https://github.com/juliet-tech/popularis-api)
 
 ## Stack
 
