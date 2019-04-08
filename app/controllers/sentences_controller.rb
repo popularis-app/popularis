@@ -12,6 +12,8 @@ class SentencesController < ApplicationController
       OR bodies.content @@ :query \
       OR bodies.category @@ :query
   		"
+
+      # Try putting % % around :query -> https://sqlbolt.com/lesson/select_queries_with_constraints_pt_2
   		@sentences = Sentence.joins(:bodies).where(sql_query, query: "%#{params[:query]}%")
       @query_qty = @sentences.each_with_object(Hash.new(0)) { |sentence, counts| counts[sentence] += 1 }
       @sorted_sentences = @query_qty.sort_by { |sentence, qty| qty }.reverse
