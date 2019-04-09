@@ -13,7 +13,7 @@ Antes de empezar, asegurate tener esto instalado en tu computadora:
 ```
 ruby 2.4.3
 rails 5.2
-postgres
+postgresql 10.4
 ```
 
 ### Instalación
@@ -59,12 +59,13 @@ Esta sección busca explicar lo que sucede cada vez que alguien accede al buscad
 (1) Si el usuario no escribió nada, verá todas las sentencias en el orden como estan guardadas en la base de datos.
 
 (2) Si el usuario escribió una palabra(`@query`), la plataforma buscara una palabra similar a esa adentro de:
- ** Nombre de cada sentencia
- ** Tipo de cada sentencia
- ** Institución de cada sentencia
- ** Entrada de cada sentencia
- ** Contenido del Cuerpo
- ** Tipo de Cuerpo
+
+ * Nombre de cada sentencia
+ * Tipo de cada sentencia
+ * Institución de cada sentencia
+ * Entrada de cada sentencia
+ * Contenido del Cuerpo
+ * Tipo de Cuerpo
 
 (3) Luego se crea un nuevo hash: `{sentencia: cantidad}` -> donde `sentencia` es el objeto en cuestión y la `cantidad` es el número de veces que aparece `@query` en las columnas establecidas en el punto 2.
 
@@ -81,6 +82,7 @@ rails console
 Sentence.all
 Feedback.all
 Sentence.first.bodies.all
+..cualquier método de Active Record
 ```
 
 (2) De no escribir nada en la barra del buscador, podrá ver todas las sentencias en `http://localhost:3000/sentences`
