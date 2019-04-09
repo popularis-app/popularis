@@ -30,28 +30,6 @@ rails db:migrate db:seed
 
 (4) Para crear el servidor local, corra `rails server` en el Terminal y deberías poder ver el sitio en <code>http://localhost:3000</code> en el navegador.
 
-
-<!--
-## Running the tests
-
-Explain how to run the automated tests for this system -->
-
-<!-- ### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-``` -->
-
-<!-- ### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-``` -->
-
 ## Buscador
 
 Esta sección busca explicar lo que sucede cada vez que alguien accede al buscador y llega a `sentences#index`:
@@ -97,13 +75,15 @@ De tener algún inconveniente en producción, empiece por correr <code>heroku lo
 
 ## Para el futuro
 
-He dejado instalado [Devise](https://github.com/plataformatec/devise) para cuando estén listos para crear Usuarios en la plataforma.
+El próximo paso seguro será conseguir un _SSL certificate_ para poder tener seguro el sitio de cualquier hacker. Esto se puede lograr por medio de Heroku con tal de que se este pagando al menos por el Plan Hobby. También lo ofrece GoDaddy.
 
-En ese sentido, falta agregar tambien el Admin interface para poder visualizar la data y agregar [Pundit](https://github.com/varvet/pundit) para trabajar el authorization de los usuarios a travez de la plataforma.
+He dejado instalado [Devise](https://github.com/plataformatec/devise) para cuando estén listos para crear `usuarios` en la plataforma.
+
+En ese sentido, falta agregar tambien el Admin interface para poder visualizar la data y agregar [Pundit](https://github.com/varvet/pundit) para trabajar el authorization de los usuarios mientras navega en la plataforma.
 
 ## .env variables
 
-Para el manejo de las environment variables, se ha utilizado [Dotenv](https://github.com/bkeepers/dotenv)
+Para el manejo de las environment variables, se ha utilizado [Dotenv Gem](https://github.com/bkeepers/dotenv)
 
 * En development:
 
@@ -111,7 +91,9 @@ En `popularis/.env` podrá encontrar todas las `environment variables` para cual
 
 * En producción:
 
-Una vez publique el sitio online, deberá escribir en el Terminal `heroku config:set API_KEY=adjhds6shqqhnekl`para enviar las variables correpsondientes al servidor.
+Una vez publique el sitio online, deberá escribir en el Terminal `heroku config:set API_KEY=adjhds6shqadadafqhnekl`para enviar las variables correpsondientes al servidor.
+
+Las `environment variables` que existen actualmente en producción se pueden encontrar dentro del `Heroku Dashboard > Settings > Config Vars > Reveal Config Vars`
 
 ## Para agregar nuevas sentencias acceda a [Popularis API](https://github.com/juliet-tech/popularis-api)
 
