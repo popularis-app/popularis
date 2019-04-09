@@ -19,6 +19,7 @@ class SentencesController < ApplicationController
       @sorted_sentences = @query_qty.sort_by { |sentence, qty| qty }.reverse
       @sentences = @sorted_sentences.map { |e| e[0] }
 
+
       # @sentences = @sentences.sort_by { |sentence| @sentences.grep(sentence).size }
 
       # @sentences.each do |sentence|
@@ -36,5 +37,6 @@ class SentencesController < ApplicationController
 
   def show
     @sentence = Sentence.find(params[:id])
+    @bodies = @sentence.bodies.sort_by{ |body| body.number }
   end
 end

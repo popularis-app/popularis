@@ -29,7 +29,7 @@
             <h4><strong>Institución:</strong> <%= @sentence.institution %></h4>
           </li>
           <li>
-            <h4><strong>Responsable:</strong> <%= @sentence.responsibles.first.name %>[<%= @sentence.responsibles.first.category %>]</h4>
+            <h4><strong>Responsable:</strong> <%= @sentence.responsibles.first.name %> [<%= @sentence.responsibles.first.category %>]</h4>
           </li>
           <li>
             <h4><%= @sentence.category %> por <%= @sentence.parts.first.name %> contra <%= @sentence.parts.last.name %></h4>
@@ -38,21 +38,17 @@
       </div>
       <br>
       <div class="body">
-        <% @sentence.bodies.each do |body| %>
-          <% if body.category == 'Head_1' %>
-            <p><strong><%= body.content %></strong></p>
+        <% @bodies.each do |body| %>
+          <% if ((body.content == ('Notifíquese.' || 'Notifíquese' || 'NOTIFÍQUESE' || 'NOTIFIQUESE')) || body.category == 'Head_1') %>
+            <p><strong><%= body.content.upcase %></strong></p>
           <% elsif body.category == 'Body_2' %>
             <p class='quote'><em><%= body.content %></em></p>
-          <% elsif body.content == ('Notifíquese.' || 'Notifíquese') %>
-            <p><strong><%= body.content.upcase %></strong></p>
           <% else %>
             <p><%= body.content %></p>
           <% end %>
         <% end %>
-      <!-- </div> -->
-      <!-- <div class="body"> -->
         <% @sentence.notifieds.each do |notified| %>
-        <p><%= notified.name %> [<%= notified.title %>]</p>
+          <p><%= notified.name %> [<%= notified.title %>]</p>
         <% end %>
       </div>
     </div>
