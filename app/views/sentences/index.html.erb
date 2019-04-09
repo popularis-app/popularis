@@ -29,8 +29,8 @@
                 <% end %>
               </div>
               <div class="description">
-                <p>Cantidad de veces que aparece <strong><%= @query %></strong> dentro de la sentencia: <%= @query_qty[sentence] %></p>
                 <% if !@query.nil? && !@query.blank? %>
+                  <p>Cantidad de veces que aparece <strong><%= @query %></strong> dentro de la sentencia: <%= @query_qty[sentence] %></p>
                   <% selected = sentence.bodies.select do |body| %>
                     <% (body.content.include?(@query)) && (body.category != 'Head_1') && (body.content != ('Notifíquese' || 'Notifíquese.' || 'NOTIFÍQUESE')) %>
                   <% end %>
@@ -54,6 +54,7 @@
                   <p class='font-13 wrap-elipsis'>
                     <%= "#{sentence.bodies.second.content.first(450)}..." %>
                   </p>
+                  <br>
                 <% end %>
               </div>
             </li>
