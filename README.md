@@ -19,6 +19,7 @@ postgresql 10.4
 ### Instalación
 
 (1) Fork/clone este repository para poder ver el código localmente en tu computadora <br>
+
 (2) En la terminal:
 
 ```
@@ -45,33 +46,34 @@ Esta sección busca explicar lo que sucede cada vez que alguien accede al buscad
  * Contenido del Cuerpo
  * Tipo de Cuerpo
 
-(3) Luego se crea un nuevo hash: `{sentencia: cantidad}` -> donde `sentencia` es el objeto en cuestión y la `cantidad` es el número de veces que aparece `@query` en las columnas establecidas en el punto 2.
+(3) Luego se crea un nuevo hash: `{sentencia: cantidad}` -> donde `sentencia` es el objeto en cuestión y la `cantidad` es el número de veces que aparece `@query` en las columnas establecidas en el punto 2 de cada sentencia.
 
-(4) Se ordenan estas de manera que las que tienen el número más alto van al inicio.
-
---> Para el futuro, recomiendo utilizar [PgSearch](https://github.com/Casecommons/pg_search) para agregarle más funcionalidades al buscador.
+(4) Luego estas se ordenan de manera que las que tienen el número más alto van al inicio.
 
 ## Para manipular la base de datos
 
-(1) En el Terminal:
+* En el Terminal:
 
 ```
-rails console
-Sentence.all
-Feedback.all
-Sentence.first.bodies.all
-..cualquier método de Active Record
+$ rails console
+
+  Sentence.all
+  Feedback.all
+  Sentence.first.bodies.all
+  ..cualquier método de ActiveRecord
 ```
 
-(2) De no escribir nada en la barra del buscador, podrá ver todas las sentencias en `http://localhost:3000/sentences`
+* En el navegador:
 
-(3) Para ver todos los feedbacks recibidos puede acceder a `http://localhost:3000/feedbacks`
+  De no escribir nada en la barra del buscador, podrá ver todas las *sentencias* en `http://localhost:3000/sentences`
+
+  Para ver todos los *feedbacks* recibidos puede acceder a `http://localhost:3000/feedbacks`
 
 ## Deployment
 
-El servidor en producción está en Heroku actualmente bajo el sitio <code>http://popularis.herokuapp.com</code>
+El servidor en producción está en Heroku actualmente bajo el sitio `http://popularis.herokuapp.com` <br>
 
-De tener algún inconveniente en producción, empiece por correr <code>heroku logs</code> en el Terminal y la documentación de [Heroku](https://devcenter.heroku.com/).
+De tener algún inconveniente en producción, empiece por correr `heroku logs` en el Terminal y la documentación de [Heroku](https://devcenter.heroku.com/).
 
 ## Para el futuro
 
