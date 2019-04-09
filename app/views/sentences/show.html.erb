@@ -7,11 +7,11 @@
   </div>
   <div class="container">
     <div class="sentence">
-      <div class="title">
-        <h2 class='blue-header header-size'><%= @sentence.name_displayed %></h2>
+      <div class="sentence-name">
+        <h2 class='blue-header bold-font header-size karla'><%= @sentence.name_displayed %></h2>
       </div>
       <br>
-      <div class="info">
+      <div class="info karla">
         <ul>
           <li>
             <h4><strong>Fecha:</strong> 25 de mayo de 1995</h4>
@@ -37,7 +37,7 @@
         </ul>
       </div>
       <br>
-      <div class="body">
+      <div class="body karla">
         <% @bodies.each do |body| %>
           <% if ((body.content == ('Notifíquese.' || 'Notifíquese' || 'NOTIFÍQUESE' || 'NOTIFIQUESE')) || body.category == 'Head_1') %>
             <p><strong><%= body.content.upcase %></strong></p>

@@ -1,6 +1,5 @@
 .quote{
   margin: 20px;
-
 }
 
 .header-size{
@@ -9,6 +8,14 @@
 
 .info h4{
   font-size: medium
+}
+
+.karla p,h4,h2{
+  font-family: $body-font
+}
+
+.bold-font{
+  font-weight: 900
 }
 
 // .side-items{
