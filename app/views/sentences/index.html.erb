@@ -26,7 +26,7 @@
               <div class="description">
                 <% if !@query.nil? %>
                   <% selected = sentence.bodies.select do |body| %>
-                    <% body.content.include?(@query) && body.category != 'Head_1' %>
+                    <% (body.content.include?(@query)) && (body.category != 'Head_1') && (body.content != ('Notifíquese' || 'Notifíquese.' || 'NOTIFÍQUESE')) %>
                   <% end %>
                   <% if selected == [] %>
                     <p class='font-13 wrap-elipsis'>
@@ -36,7 +36,7 @@
                     <p class='font-13 wrap-elipsis'>
                       <% highlighted = selected.first.content.split.map do |word| %>
                         <% if word == (@query || @query.upcase || @query.capitalize || @query.downcase || "#{@query}," || "#{@query}.") %>
-                           <span class='highlighted'><%= word %></span>
+                           <span class='highlight'><%= word %></span>
                         <% else %>
                           <%= word %>
                         <% end %>

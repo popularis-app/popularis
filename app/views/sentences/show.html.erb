@@ -39,15 +39,15 @@
       <br>
       <div class="body">
         <% @sentence.bodies.each do |body| %>
-        <% if body.category == 'Head_1' %>
-        <p><strong><%= body.content %></strong></p>
-        <% elsif body.category == 'Body_2' %>
-        <p class='quote'><em><%= body.content %></em></p>
-        <% elsif body.content == 'Notifíquese.' %>
-        <p><strong><%= body.content.upcase %></strong></p>
-        <% else %>
-        <p><%= body.content %></p>
-        <% end %>
+          <% if body.category == 'Head_1' %>
+            <p><strong><%= body.content %></strong></p>
+          <% elsif body.category == 'Body_2' %>
+            <p class='quote'><em><%= body.content %></em></p>
+          <% elsif body.content == ('Notifíquese.' || 'Notifíquese') %>
+            <p><strong><%= body.content.upcase %></strong></p>
+          <% else %>
+            <p><%= body.content %></p>
+          <% end %>
         <% end %>
       <!-- </div> -->
       <!-- <div class="body"> -->
