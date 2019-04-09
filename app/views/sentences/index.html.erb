@@ -13,7 +13,7 @@
         <% end %>
       </div>
       <% if @sentences == [] %>
-        <p style='height:70vh'>No hemos encontrado ninguna sentencia con esa información. Por favor intente denuevo.</p>
+        <p style='height:70vh'>No hemos encontrado ninguna sentencia con esa información. Por favor intente de nuevo.</p>
       <% else %>
         <ul class='sentence-list'>
           <% @sentences.each do |sentence| %>
@@ -24,13 +24,13 @@
                 <% end %>
               </div>
               <div class="description">
-                <% if !@query.nil? %>
+                <% if !@query.nil? && !@query.blank? %>
                   <% selected = sentence.bodies.select do |body| %>
                     <% (body.content.include?(@query)) && (body.category != 'Head_1') && (body.content != ('Notifíquese' || 'Notifíquese.' || 'NOTIFÍQUESE')) %>
                   <% end %>
                   <% if selected == [] %>
-                    <p class='font-13 wrap-elipsis'>
-                      <%= sentence.bodies.second.content.first(500) %>
+                    <p class='font-13 wrap-elipsis one'>
+                      <%= sentence.bodies.second.content.first(450) %>
                     </p>
                   <% else %>
                     <p class='font-13 wrap-elipsis'>
@@ -45,8 +45,8 @@
                     </p>
                   <% end %>
                 <% else %>
-                  <p class='font-13 wrap-elipsis'>
-                    <%= sentence.bodies.second.content.first(500) %>
+                  <p class='font-13 wrap-elipsis three'>
+                    <%= "#{sentence.bodies.second.content.first(450)}..." %>
                   </p>
                 <% end %>
               </div>
