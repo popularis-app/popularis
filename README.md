@@ -29,7 +29,7 @@ rails db:migrate db:seed
 
 (3) Asegurarse de tener las `environment variables` (por ej, API keys) escritas en su código local adentro de `popularis/.env`.
 
-(4) Para crear el servidor local, corra `rails server` en el Terminal y deberías poder ver el sitio en <code>http://localhost:3000</code> en el navegador.
+(4) Para crear el servidor local, corra `rails server` en el Terminal y deberías poder ver el sitio en `http://localhost:3000` en el navegador.
 
 ## Buscador
 
@@ -60,7 +60,7 @@ $ rails console
   Sentence.all
   Feedback.all
   Sentence.first.bodies.all
-  ..cualquier método de ActiveRecord
+  ..cualquier método de [ActiveRecord](https://guides.rubyonrails.org/active_record_basics.html)
 ```
 
 * En el navegador:
