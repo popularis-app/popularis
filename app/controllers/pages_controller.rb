@@ -7,7 +7,7 @@ class PagesController < ApplicationController
   end
 
   def about_us
-    @members = parsed_members
+    @members = parsed_members['Equipo']
   end
 
   def terms
