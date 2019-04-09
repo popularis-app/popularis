@@ -19,17 +19,25 @@
           <% @sentences.each do |sentence| %>
             <li class="sentence">
               <div class="title">
+
+              <%# if sentence.name_displayed.include?(@query) %>
+                <%# s_name_words = @sentence.name_displayed.split(" ").map do %>
+                <%# s_name_words.each %>
+
                 <%= link_to sentence_path(sentence), class: 'blue-header font-18desktop-14mobile' do %>
+
+
                   <%= sentence.name_displayed %>
                 <% end %>
               </div>
               <div class="description">
+                <p>Cantidad de veces que aparece <strong><%= @query %></strong> dentro de la sentencia: <%= @query_qty[sentence] %></p>
                 <% if !@query.nil? && !@query.blank? %>
                   <% selected = sentence.bodies.select do |body| %>
                     <% (body.content.include?(@query)) && (body.category != 'Head_1') && (body.content != ('Notifíquese' || 'Notifíquese.' || 'NOTIFÍQUESE')) %>
                   <% end %>
                   <% if selected == [] %>
-                    <p class='font-13 wrap-elipsis one'>
+                    <p class='font-13 wrap-elipsis'>
                       <%= sentence.bodies.second.content.first(450) %>
                     </p>
                   <% else %>
@@ -45,7 +53,7 @@
                     </p>
                   <% end %>
                 <% else %>
-                  <p class='font-13 wrap-elipsis three'>
+                  <p class='font-13 wrap-elipsis'>
                     <%= "#{sentence.bodies.second.content.first(450)}..." %>
                   </p>
                 <% end %>

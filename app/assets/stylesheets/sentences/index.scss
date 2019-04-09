@@ -55,6 +55,10 @@
   min-height: 75vh;
 }
 
+.description > p:nth-child(1){
+  margin-bottom: 0
+}
+
 @media only screen and (max-width: 768px) {
   .min-height-75vh{
     min-height: 65vh
