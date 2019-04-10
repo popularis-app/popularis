@@ -1,15 +1,40 @@
 <div class="navbar-space"></div>
-<div class="container">
-  <h1>Feedbacks</h1>
 
-  <table>
-    <tr>
-      <th>Justo lo que buscaba</th>
-      <th>No era lo que buscaba</th>
-    </tr>
-    <tr>
-      <td><%= @positive.count %></td>
-      <td><%= @negative.count %></td>
-    </tr>
-  </table>
+<div class="container height-70vh">
+  <h1>Feedbacks</h1>
+  <br>
+
+  <div class="tables flex">
+    <div class="content-table">
+      <h2>Por contenido:</h2>
+      <table>
+         <tr>
+           <th>Justo lo que buscaba</th>
+           <th>No era lo que buscaba</th>
+         </tr>
+         <tr>
+           <td><%= @positive.count %></td>
+           <td><%= @negative.count %></td>
+         </tr>
+      </table>
+    </div>
+
+    <div class="sentence-table">
+      <h2>Por sentencia:</h2>
+      <table>
+       <tr>
+         <th>sentencia_id</th>
+         <th>contenido</th>
+       </tr>
+       <% @feedbacks.each do |feedback| %>
+         <tr>
+           <td><%= feedback.sentence.id %></td>
+           <td><%= feedback.content %></td>
+         </tr>
+       <% end %>
+      </table>
+    </div>
+  </div>
 </div>
+
+
