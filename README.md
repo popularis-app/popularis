@@ -4,11 +4,11 @@ Popularis es un buscador de sentencias de tribunales panameños para hacerlas f�
 
 ## Para empezar
 
-Estas instrucciones buscan que puedas correr el programa en tu propia computadora localmente para development y testing. Para deployment, encontrarás información más adelante.
+Estas instrucciones buscan que puedas correr el programa en tu propia computadora localmente para development y como deploy la aplicación al production environment.
 
 ### Prerequisitos
 
-Antes de empezar, asegurate tener esto instalado en tu computadora:
+Antes de empezar, debes tener esto instalado en tu computadora:
 
 ```
 ruby 2.4.3
@@ -16,7 +16,7 @@ rails 5.2
 postgresql 10.4
 ```
 
-### Instalación
+### Instalación (development environment)
 
 (1) Fork/clone este repository para poder ver el código localmente en tu computadora <br>
 
@@ -46,9 +46,11 @@ Esta sección busca explicar lo que sucede cada vez que alguien accede al buscad
  * Contenido del Cuerpo
  * Tipo de Cuerpo
 
-(3) Luego se crea un nuevo hash: `{sentencia: cantidad}` -> donde `sentencia` es el objeto en cuestión y la `cantidad` es el número de veces que aparece `@query` en las columnas establecidas en el punto 2 de cada sentencia.
+  Luego se crea un nuevo hash: `{sentencia: cantidad}` -> donde `sentencia` es el objeto en cuestión y la `cantidad` es el número de veces que aparece `@query` en las columnas establecidas en el punto 2 de cada sentencia.
 
-(4) Luego estas se ordenan de manera que las que tienen el número más alto van al inicio.
+  Luego estas se ordenan de manera que las que tienen el número más alto van al inicio.
+
+(3) Si `@query` no existe en ningun lado, podrá ver un texto para que se trate de nuevo.
 
 ## Para manipular la base de datos
 
@@ -65,9 +67,9 @@ $ rails console
 
 * En el navegador:
 
-  De no escribir nada en la barra del buscador, podrá ver todas las *sentencias* en `http://localhost:3000/sentences`
+  De no escribir nada en la barra del buscador, podrá ver todas las *sentencias* en http://localhost:3000/sentences en development o http://popularis.herokuapp.com/sentences en production.
 
-  Para ver todos los *feedbacks* recibidos puede acceder a `http://localhost:3000/feedbacks`
+  Para ver todos los *feedbacks* recibidos puede acceder a http://localhost:3000/feedbacks en development o http://popularis.herokuapp.com/feedbacks en production.
 
 ## Deployment
 
@@ -81,7 +83,7 @@ El próximo paso seguro será conseguir un _SSL certificate_ para poder tener se
 
 He dejado instalado [Devise](https://github.com/plataformatec/devise) para cuando estén listos para crear `usuarios` en la plataforma.
 
-En ese sentido, falta agregar tambien el Admin interface para poder visualizar la data y agregar [Pundit](https://github.com/varvet/pundit) para trabajar el authorization de los usuarios mientras navega en la plataforma.
+En ese sentido, falta agregar tambien el Admin interface para poder visualizar la data y agregar [Pundit](https://github.com/varvet/pundit) para trabajar el authorization de los usuarios mientras navegan en la plataforma.
 
 ## .env variables
 
@@ -93,11 +95,9 @@ En `popularis/.env` podrá encontrar todas las `environment variables` para cual
 
 * En producción:
 
-Una vez publique el sitio online, deberá escribir en el Terminal `heroku config:set API_KEY=value`(reemplazando `API_KEY` por el nombre del API y `value` por el key secreto correspondiente) para enviar las variables gal servidor.
+Una vez publique el sitio online, deberá escribir en el Terminal `heroku config:set API_KEY=value`(reemplazando `API_KEY` por el nombre del API y `value` por el key secreto correspondiente) para enviar las variables al servidor.
 
 Las `environment variables` que existen actualmente en producción se pueden encontrar dentro del `Heroku Dashboard > Settings > Config Vars > Reveal Config Vars`
-
-## Para agregar nuevas sentencias acceda a [Popularis API](https://github.com/juliet-tech/popularis-api)
 
 ## Stack
 
@@ -114,3 +114,4 @@ Las `environment variables` que existen actualmente en producción se pueden enc
 
 [Contribuidores](https://github.com/your/project/contributors)
 
+## Para agregar nuevas sentencias acceda a [Popularis API](https://github.com/juliet-tech/popularis-api)
