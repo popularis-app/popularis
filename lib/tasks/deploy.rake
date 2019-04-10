@@ -1,7 +1,7 @@
 namespace :deploy do
   desc 'Deploy to production'
   task :production do
-    remote = "production"
+    remote = "https://git.heroku.com/popularis.git"
     app = "popularis"
     system "heroku maintenance:on --app #{app}"
     system "git push -f #{remote} master"
