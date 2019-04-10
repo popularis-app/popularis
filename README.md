@@ -93,7 +93,7 @@ En `popularis/.env` podrá encontrar todas las `environment variables` para cual
 
 * En producción:
 
-Una vez publique el sitio online, deberá escribir en el Terminal `heroku config:set API_KEY=value`(reemplazando `API_KEY` por el nombre del API y `value` por el key secreto correspondiente) para enviar las variables al servidor.
+Una vez publique el sitio online, deberá escribir en el Terminal `heroku config:set API_KEY=value`(reemplazando `API_KEY` por el nombre del API y `value` por el key secreto correspondiente) para enviar las variables gal servidor.
 
 Las `environment variables` que existen actualmente en producción se pueden encontrar dentro del `Heroku Dashboard > Settings > Config Vars > Reveal Config Vars`
 

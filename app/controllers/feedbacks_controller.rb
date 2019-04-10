@@ -1,6 +1,9 @@
 class FeedbacksController < ApplicationController
 
   def index
+    @feedbacks = Feedback.all
+    @positive = Feedback.where(content: "Justo era lo que buscaba")
+    @negative = Feedback.where(content: "No era lo que buscaba")
   end
 
   def new
