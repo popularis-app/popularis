@@ -46,7 +46,7 @@
   margin: 0 auto;
   flex-grow: 0;
   width: 20%;
-  text-align: center
+  text-align: center;
 }
 
 .feedbacks {
@@ -69,6 +69,11 @@
   font-size: 13px;
   color: #707070;
   line-height: 35px;
+}
+
+.block-fixed{
+  display: block;
+  position: fixed;
 }
 
 // Media query responsiveness for mobile phones
