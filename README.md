@@ -77,7 +77,7 @@ De tener algún inconveniente en producción, empiece por correr `heroku logs` e
 
 ## Para el futuro
 
-El próximo paso seguro será conseguir un _SSL certificate_ para poder tener seguro el sitio de cualquier hacker. Esto se puede lograr por medio de Heroku con tal de que se este pagando al menos por el Plan Hobby. También lo ofrece GoDaddy.
+El próximo paso seguro será conseguir un _SSL certificate_ para poder tener seguro el sitio de cualquier hacker (https). Esto se puede lograr por medio de Heroku con tal de que se este pagando al menos por el Plan Hobby. También lo ofrece GoDaddy.
 
 He dejado instalado [Devise](https://github.com/plataformatec/devise) para cuando estén listos para crear `usuarios` en la plataforma.
 
@@ -93,7 +93,7 @@ En `popularis/.env` podrá encontrar todas las `environment variables` para cual
 
 * En producción:
 
-Una vez publique el sitio online, deberá escribir en el Terminal `heroku config:set API_KEY=adjhds6shqadadafqhnekl`para enviar las variables correpsondientes al servidor.
+Una vez publique el sitio online, deberá escribir en el Terminal `heroku config:set API_KEY=value`(reemplazando `API_KEY` por el nombre del API y `value` por el key secreto correspondiente) para enviar las variables al servidor.
 
 Las `environment variables` que existen actualmente en producción se pueden encontrar dentro del `Heroku Dashboard > Settings > Config Vars > Reveal Config Vars`
 
