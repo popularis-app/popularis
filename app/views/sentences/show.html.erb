@@ -1,9 +1,11 @@
 <div class="navbar-space"></div>
 <div class="show-wrapper flex">
   <div class="back-btn">
-    <%= link_to sentences_path do %>
-      <i class="fas fa-angle-double-left blue-header"></i>
-    <% end %>
+    <!-- <div class="block-fixed"> -->
+      <%= link_to sentences_path do %>
+        <i class="fas fa-angle-double-left blue-header"></i>
+      <% end %>
+    <!-- </div> -->
   </div>
   <div class="container">
     <div class="sentence">
@@ -54,7 +56,7 @@
     </div>
   </div>
   <div class="feedbacks centering-100vh">
-
+<div class="block-fixed">
     <%= simple_form_for Feedback.new do |f|  %>
       <%= f.hidden_field :content, value: 'Justo era lo que buscaba' %>
       <%= f.hidden_field :sentence_id, value: @sentence.id %>
@@ -71,5 +73,6 @@
         <div class="text">No era lo que buscaba</div>
        <% end %>
     <% end %>
+    </div>
   </div>
 </div>
