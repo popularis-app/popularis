@@ -26,5 +26,6 @@ class SentencesController < ApplicationController
   def show
     @sentence = Sentence.find(params[:id])
     @bodies = @sentence.bodies.sort_by{ |body| body.number }
+    @query = params[:query]
   end
 end
