@@ -6,7 +6,7 @@
       <%= text_field_tag :query,
       params[:query],
       class: "form-control",
-        placeholder: "incumplimiento de contrato"
+        placeholder: "amparo"
         %>
         <br>
         <%= submit_tag 'Buscar', class: 'btn btn-flat' %>
@@ -19,7 +19,7 @@
           <% @sentences.each do |sentence| %>
             <li class="sentence">
               <div class="title">
-                <%= link_to sentence_path(sentence), class: 'blue-header font-18desktop-14mobile' do %>
+                <%= link_to sentence_path(sentence, query: @query ), class: 'blue-header font-18desktop-14mobile'  do %>
                   <%= sentence.name_displayed %>
                 <% end %>
               </div>

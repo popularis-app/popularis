@@ -57,15 +57,16 @@
   </div>
   <div class="feedbacks centering-100vh">
 <div class="block-fixed">
-    <%= simple_form_for Feedback.new do |f|  %>
+    <%= simple_form_for @feedback do |f|  %>
       <%= f.hidden_field :content, value: 'Justo era lo que buscaba' %>
+      <%= f.hidden_field :query, value: @query %>
       <%= f.hidden_field :sentence_id, value: @sentence.id %>
       <%= button_tag(type: 'submit', class: "feedback-btn red margin-b-15") do %>
         <div class="text">Justo lo que buscaba</div>
         <i class="far fa-thumbs-up"></i>
        <% end %>
     <% end %>
-    <%= simple_form_for Feedback.new do |f|  %>
+    <%= simple_form_for @feedback do |f|  %>
       <%= f.hidden_field :content, value: 'No era lo que buscaba' %>
       <%= f.hidden_field :sentence_id, value: @sentence.id %>
       <%= button_tag(type: 'submit', class: "feedback-btn blue") do %>
