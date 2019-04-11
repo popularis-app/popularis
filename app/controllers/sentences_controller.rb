@@ -27,5 +27,6 @@ class SentencesController < ApplicationController
     @sentence = Sentence.find(params[:id])
     @bodies = @sentence.bodies.sort_by{ |body| body.number }
     @query = params[:query]
+    @feedback = Feedback.new(query: @query)
   end
 end

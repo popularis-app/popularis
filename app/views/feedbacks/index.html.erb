@@ -24,12 +24,16 @@
       <table>
        <tr>
          <th>sentencia_id</th>
+         <!-- <th>nombre de sentencia</th> -->
          <th>contenido</th>
+         <th>query</th>
        </tr>
        <% @feedbacks.each do |feedback| %>
          <tr>
            <td><%= feedback.sentence.id %></td>
+           <!-- <td><%#= feedback.sentence.name %></td> -->
            <td><%= feedback.content %></td>
+           <td><%= feedback.query %></td>
          </tr>
        <% end %>
       </table>
