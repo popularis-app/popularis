@@ -16,7 +16,7 @@ rails 5.2
 postgresql 10.4
 ```
 
-### Instalación (development environment)
+### Instalación
 
 (1) Fork/clone este repository para poder ver el código localmente en tu computadora <br>
 
