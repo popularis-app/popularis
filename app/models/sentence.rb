@@ -36,7 +36,13 @@ class Sentence < ApplicationRecord
     end
   end
 
+  def first_word(string)
+    string.split(" ").first
+  end
+
   def name_displayed
-    "Sentencia del #{capitalize_everything(institution)} del #{spanish_date} [#{parts.first.first_name} vs. #{parts.last.first_name}]"
+    "#{capitalize_everything(institution)}. #{first_word(category)} del #{spanish_date} #{entry_point} [#{capitalize_everything(parts.first.name)} vs. #{capitalize_everything(parts.last.name)}]"
   end
 end
+
+

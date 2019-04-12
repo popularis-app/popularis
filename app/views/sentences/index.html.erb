@@ -25,7 +25,7 @@
               </div>
               <div class="description">
                 <% if !@query.nil? && !@query.blank? %>
-                  <p><strong>Ocurrencias de <%= @query %>: <%= @query_qty[sentence] %></strong></p>
+                  <p class='font-13'><strong>Ocurrencias de <%= @query %>: <%= @query_qty[sentence] %></strong></p>
                   <% selected = sentence.bodies.select do |body| %>
                     <% (body.content.include?(@query)) && (body.category != 'Head_1') && (body.content != ('Notifíquese' || 'Notifíquese.' || 'NOTIFÍQUESE')) %>
                   <% end %>
