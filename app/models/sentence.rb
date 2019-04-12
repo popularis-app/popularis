@@ -36,18 +36,12 @@ class Sentence < ApplicationRecord
     end
   end
 
-  # def institution_split
-  #   judicial_district = self.institution.split.last(3)
-  #   if judicial_district[0] == 'Primer'
-  #     acronym = '1DJ'
-  #   else
-  #     judicial_district.join(" ")
-  #   end
-  # end
-
+  def first_word(string)
+    string.split(" ").first
+  end
 
   def name_displayed
-    "#{capitalize_everything(institution)} #{category} del #{spanish_date} #{entry_point} [#{capitalize_everything(parts.first.name)} vs. #{capitalize_everything(parts.last.name)}]"
+    "#{capitalize_everything(institution)}. #{first_word(category)} del #{spanish_date} #{entry_point} [#{capitalize_everything(parts.first.name)} vs. #{capitalize_everything(parts.last.name)}]"
   end
 end
 
