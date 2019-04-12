@@ -14,6 +14,7 @@ class FeedbacksController < ApplicationController
   def create
     @feedback = Feedback.new(feedback_params)
     @feedback.content = params[:feedback][:content]
+    @feedback.query = params[:feedback][:query]
     @sentence = Sentence.find(params[:feedback][:sentence_id])
     @feedback.sentence = @sentence
     if @feedback.save
@@ -27,7 +28,7 @@ class FeedbacksController < ApplicationController
 
   private
   def feedback_params
-    params.require(:feedback).permit(:content)
+    params.require(:feedback).permit(:content, :query)
     # params[:team_member].permit(:users).require(:first_name, :email)
   end
 end

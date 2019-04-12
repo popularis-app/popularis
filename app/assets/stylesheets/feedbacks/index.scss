@@ -1,14 +1,19 @@
-table
-{
+table{
 border-collapse: collapse;
 border-spacing: 0px;
 }
-table, th, td
-{
+
+table, th, td{
 padding: 5px;
 border: 1px solid black;
 }
 
 .tables{
   justify-content: space-around
+}
+
+@media only screen and (max-width: 768px) {
+  .tables{
+    flex-direction: column
+  }
 }
