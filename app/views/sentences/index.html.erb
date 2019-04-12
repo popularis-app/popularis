@@ -22,11 +22,6 @@
                 <%= link_to sentence_path(sentence, query: @query ), class: 'blue-header font-18desktop-14mobile'  do %>
                   <%= sentence.name_displayed %>
                 <% end %>
-
-
-
-
-
               </div>
               <div class="description">
                 <% if !@query.nil? && !@query.blank? %>
