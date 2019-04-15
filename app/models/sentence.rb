@@ -41,7 +41,7 @@ class Sentence < ApplicationRecord
   end
 
   def name_displayed
-    "#{capitalize_everything(institution)}. #{first_word(category)} del #{spanish_date} #{entry_point} [#{capitalize_everything(parts.first.name)} vs. #{capitalize_everything(parts.last.name)}]"
+    "#{capitalize_everything(institution)}. #{first_word(category)} del #{spanish_date} #{entry_point} (#{capitalize_everything(parts.first.name)} vs. #{capitalize_everything(parts.last.name)})"
   end
 end
 
