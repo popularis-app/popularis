@@ -24,14 +24,12 @@
       <table>
        <tr>
          <th>sentencia_id</th>
-         <!-- <th>nombre de sentencia</th> -->
          <th>contenido</th>
          <th>query</th>
        </tr>
        <% @feedbacks.each do |feedback| %>
          <tr>
            <td><%= feedback.sentence.id %></td>
-           <!-- <td><%#= feedback.sentence.name %></td> -->
            <td><%= feedback.content %></td>
            <td><%= feedback.query %></td>
          </tr>
@@ -41,8 +39,6 @@
   </div>
   <br><br>
   <p>* Para visualizar cual sentencia lleva ese id, acceder a http://popularis.herokuapp.com/sentences/:id</p>
-
-  <%#  require 'rake' %>
   <%= link_to 'Actualizar base de datos', updating_db_path, class: 'btn btn-flat' %>
 </div>
 
