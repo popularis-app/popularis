@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get 'about_us', to: 'pages#about_us'
   get 'terms', to: 'pages#terms'
+  get 'updating_db', to: 'sentences#updating_db'
 
   resources :sentences, only: [:index, :show]
   resources :feedbacks, only: [:index, :new, :create]
