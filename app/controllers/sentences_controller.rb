@@ -33,7 +33,7 @@ class SentencesController < ApplicationController
   end
 
   def updating_db
-    url = 'https://juliet-tech.github.io/popularis-api/sentences/index.json'
+    url = 'https://raw.githubusercontent.com/juliet-tech/popularis-api/master/sentences/index.json'
     serialized_sentences = open(url).read
     sentences = JSON.parse(serialized_sentences)
     sentences = sentences["Sentencias"]
