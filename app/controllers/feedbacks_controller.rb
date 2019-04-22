@@ -26,8 +26,8 @@ class FeedbacksController < ApplicationController
   end
 
   private
+
   def feedback_params
     params.require(:feedback).permit(:content, :query)
-    # params[:team_member].permit(:users).require(:first_name, :email)
   end
 end
