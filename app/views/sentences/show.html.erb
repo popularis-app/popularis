@@ -64,7 +64,7 @@
       <%= button_tag(type: 'submit', class: "feedback-btn red margin-b-15") do %>
         <div class="text">Justo lo que buscaba</div>
         <i class="far fa-thumbs-up"></i>
-       <% end %>
+      <% end %>
     <% end %>
     <%= simple_form_for @feedback do |f|  %>
       <%= f.hidden_field :content, value: 'No era lo que buscaba' %>
@@ -72,7 +72,7 @@
       <%= button_tag(type: 'submit', class: "feedback-btn blue") do %>
         <i class="far fa-thumbs-down"></i>
         <div class="text">No era lo que buscaba</div>
-       <% end %>
+      <% end %>
     <% end %>
     </div>
   </div>
