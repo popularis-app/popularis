@@ -16,7 +16,7 @@ class PagesController < ApplicationController
   private
 
   def parsed_members
-    url = 'https://juliet-tech.github.io/popularis-api/team/team_members.json'
+    url = 'https://raw.githubusercontent.com/juliet-tech/popularis-api/master/team/team_members.json'
     serialized_team = open(url).read
     members_json = JSON.parse(serialized_team)
   end
