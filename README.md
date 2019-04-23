@@ -69,7 +69,7 @@ $ rails console
 
   De no escribir nada en la barra del buscador, podrá ver todas las *sentencias* en http://localhost:3000/sentences en development o http://popularis.herokuapp.com/sentences en production.
 
-  Para ver todos los *feedbacks* recibidos puede acceder a http://localhost:3000/feedbacks en development o http://popularis.herokuapp.com/feedbacks en production.
+  Para ver todos los *feedbacks* recibidos puede acceder a http://localhost:3000/jYai98Pp7 en development o http://popularis.herokuapp.com/jYai98Pp7 en production.
 
 ## Deployment
 
