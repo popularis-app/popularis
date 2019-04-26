@@ -16,7 +16,7 @@
       <div class="info karla">
         <ul>
           <li>
-            <h4><strong>Fecha:</strong> 25 de mayo de 1995</h4>
+            <h4><strong>Fecha:</strong> <%= @sentence.spanish_date  %></h4>
           </li>
           <li>
             <h4><strong>Demandante:</strong> <%= @sentence.capitalize_everything(@sentence.parts.first.name) %></h4>
